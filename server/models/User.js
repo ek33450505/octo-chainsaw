@@ -1,45 +1,70 @@
-const { Schema, model } = require('mongoose');
 
-const userSchema = new Schema(
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
+
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+};
+
+User.init({
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true
+        }
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [6]
+        }
+    },
+    zip: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            len: [5, 5],
+            isNumeric: true
+        }
+    }
+},
     {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true 
-        },
-        email: {
-            type: String,
-            required: true,
-            unique: true,
-            match: [/.+@.+\..+/, 'Must match an email address!']
-        },
-        password: {
-            type: String,
-            required: true,
-            minlength: 7
-          },
-        conversations: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Conversation'
-            }
-        ],
-        products: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Product'
-            }
-        ],
-        transactions: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Transaction'
-            }
-        ]
+        hooks: {
+            //before creation of user obj, use bcrypt to auto-gen a salt and hash
+            async beforeCreate(newUserData) {
+              newUserData.password = await bcrypt.hash(newUserData.password, 10);
+              //will return hashed password to the promise config obj
+              return newUserData
+            },
+            // set up beforeUpdate lifecycle "hook" functionality
+          async beforeUpdate(updatedUserData) {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            return updatedUserData;
+          }
+            },
+            
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
     }
 )
 
-const User = model('User', userSchema);
 
 module.exports = User;
