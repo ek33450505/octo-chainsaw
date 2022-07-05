@@ -1,16 +1,16 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
+// const exphbs = require('express-handlebars');
 
 const app = express();
-
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: process.env.SECRET,
+  secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -21,19 +21,18 @@ const sess = {
 
 app.use(session(sess));
 
-app.use(express.urlencoded({ extended: false }));
+// const helpers = require('./utils/helpers');
+
+// const hbs = exphbs.create({ helpers });
+
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
+
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
+// app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(require('./controllers/'));
-
-// Serve up static assets - update the back-end server's code to serve up the React front-end code in production
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '../client/build')));
-// }
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
