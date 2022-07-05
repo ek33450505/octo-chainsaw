@@ -14,44 +14,44 @@ router.get("/", (req, res) => {
     });
 });
 
-// get one user
-router.get("/:id", (req, res) => {
-  User.findOne({
-    attributes: { exclude: ["password"] },
-    where: {
-      id: req.params.id
-    },
-    include: [
-      {
-        model: Product,
-        attributes: ["id", "name", "description", "price"],
-        include: {
-          model: Category,
-          attributes: ["name"]
-        }
-      },
-      {
-        model: Rent,
-        attributes: ["id", "leaser_id", "trxn_id", "product_id", "start_date"],
-        include: {
-          model: Transaction,
-          attributes: ["id", "amount", "notes"]
-        }
-      }
-    ]
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// // get one user
+// router.get("/:id", (req, res) => {
+//   User.findOne({
+//     attributes: { exclude: ["password"] },
+//     where: {
+//       id: req.params.id
+//     },
+//     include: [
+//       {
+//         model: Product,
+//         attributes: ["id", "name", "description", "price"],
+//         include: {
+//           model: Category,
+//           attributes: ["name"]
+//         }
+//       },
+//       {
+//         model: Rent,
+//         attributes: ["id", "leaser_id", "trxn_id", "product_id", "start_date"],
+//         include: {
+//           model: Transaction,
+//           attributes: ["id", "amount", "notes"]
+//         }
+//       }
+//     ]
+//   })
+//     .then(dbUserData => {
+//       if (!dbUserData) {
+//         res.status(404).json({ message: "No user found with this id" });
+//         return;
+//       }
+//       res.json(dbUserData);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 // create a new user
 // USE JWT HERE!!!!!!!!!
@@ -59,7 +59,8 @@ router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    zip:req.body.zip
   })
     .then(dbUserData => {
       req.session.save(() => {
