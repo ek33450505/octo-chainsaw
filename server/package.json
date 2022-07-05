@@ -22,7 +22,8 @@
     "graphql": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "venmo": "^0.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.18"
