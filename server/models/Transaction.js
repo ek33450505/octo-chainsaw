@@ -23,7 +23,7 @@ Transaction.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'rent'
+        modelName: 'transaction'
     }
 );
 

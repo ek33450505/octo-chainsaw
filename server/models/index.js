@@ -21,8 +21,7 @@ Product.belongsTo(User, {
 });
 
 Product.belongsTo(Category, {
-    foreignKey: 'category_id',
-    onDelete: 'SET NULL'
+    foreignKey: 'category_id'
 });
 
 //CATEGORY
@@ -31,7 +30,9 @@ Category.hasMany(Product, {
 });
 
 //TRANSACTION
-Transaction.belongsTo(Rent);
+Transaction.belongsTo(Rent, {
+    foreignKey: 'rent_id'
+});
 
 //RENT
 Rent.hasOne(Transaction, {
@@ -42,6 +43,6 @@ Rent.hasOne(Product, {
     foreignKey: 'product_id'
 });
 
-Rent.belongsToMany(User,)
+// Rent.belongsToMany(User,)
 
 module.exports = {User, Category, Product, Rent, Transaction};
