@@ -1,14 +1,30 @@
-const { Schema, model } = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const transactionSchema = new Schema(
+class Transaction extends Model {};
+
+Transaction.init(
     {
-        owner: {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
-        renter: {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
+        amount: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false
+        },
+        notes: {
+            type: DataTypes.STRING
         }
+    },
+    {
+        sequelize,
+        timestamps: true,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'transaction'
     }
-)
+);
+
+module.exports = Transaction;

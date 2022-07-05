@@ -1,30 +1,55 @@
-const { Schema, model } = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const productSchema = new Schema(
+class Product extends Model { };
+
+Product.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        category_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'category',
+                key: 'id'
+            }
+        },
         name: {
-            type: String,
-            required: true,
-            trim: true
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
         },
         description: {
-            type: String
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
         },
         image: {
-            type: String
+            type: DataTypes.STRING
+        },
+        state: {
+            type: DataTypes.BOOLEAN
         },
         price: {
-            type: Number,
-            required: true,
-            min: 0.99
-        },
-        category: {
-            type: Schema.Types.ObjectId,
-            ref: 'Category',
-            required: true
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false
         }
+    },
+    {
+        sequelize,
+        timestamps: true,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'product'
     }
 );
 
-const Product = model('Product', productSchema);
 module.exports = Product;
