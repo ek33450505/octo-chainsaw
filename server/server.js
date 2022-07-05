@@ -13,7 +13,7 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: process.env.SECRET,
+  // secret: process.env.SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -27,7 +27,7 @@ app.use(session(sess));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(require('./controllers/'));
+app.use(require('./controllers/'));
 
 // Serve up static assets - update the back-end server's code to serve up the React front-end code in production
 if (process.env.NODE_ENV === 'production') {
