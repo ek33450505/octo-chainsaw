@@ -44,4 +44,8 @@ Rent.hasOne(Product, {
 
 Rent.belongsToMany(User,)
 
+<<<<<<< HEAD
 module.exports = { User, Product, Category, Rent, Transaction };
+=======
+module.exports = {User, Category, Product, Rent, Transaction};
+>>>>>>> d2730cc4dddcef379fb23bffc2674b361a9cd3ac
