@@ -33,4 +33,4 @@ Category.init(
     }
 )
 
-module.exoprts = Category;
+module.exports = Category;
