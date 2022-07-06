@@ -121,7 +121,7 @@ router.post("/logout", (req, res) => {
 
 // update a user's info
 // router.put("/:id", withAuth, (req, res) => {
-  router.put("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -142,7 +142,7 @@ router.post("/logout", (req, res) => {
 });
 
 // delete a user
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/:id", (req, res) => {
   User.destroy({
     where: {
       id: req.params.id
