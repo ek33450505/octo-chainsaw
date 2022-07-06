@@ -1,12 +1,37 @@
 const router = require("express").Router();
-const { Rent, Category, Product, Transaction, User } = require("../../models");
+const { Rent } = require("../../models");
 
 // get all rent
+router.get("/", (req, res) => {
+    Rent.findAll({
+    })
+      .then(dbRentData => res.json(dbRentData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
-
-// get rent by id
-
-
+//get one rent
+router.get("/:id", (req, res) => {
+    Rent.findOne({
+      where: {
+        id: req.params.id
+      },
+    })
+      .then(dbRentData => {
+        if (!dbRentData) {
+          res.status(404).json({ message: "No rent found with this id" });
+          return;
+        }
+        res.json(dbRentData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
 // create a rent
 router.post("/", (req, res) => {
     Rent.create({
@@ -35,11 +60,44 @@ router.post("/", (req, res) => {
   });
 
 // update a rent
-
-
-// delete a rent
-
-
-
+router.put("/:id", (req, res) => {
+    Rent.update(req.body, {
+      individualHooks: true,
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbRentData => {
+        if (!dbRentData[0]) {
+          res.status(404).json({ message: "No rent found with this id" });
+          return;
+        }
+        res.json(dbRentData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
+  // delete a rent
+  router.delete("/:id", (req, res) => {
+    Rent.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbRentData => {
+        if (!dbRentData) {
+          res.status(404).json({ message: "No rent found with this id" });
+          return;
+        }
+        res.json(dbRentData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 
 module.exports = router;
