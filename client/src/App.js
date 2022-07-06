@@ -1,5 +1,5 @@
 import './App.css';
-import Home from '../src/components/Home';
+import Hero from '../src/components/Hero';
 import Nav from '../src/components/Nav';
 import CategoryMenu from './components/CategoryMenu';
 const axios = require('axios').default;
@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
         <Nav />
-        <Home />
+        <Hero />
         <CategoryMenu />
     </div>
   );
