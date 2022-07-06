@@ -13,7 +13,6 @@ User.hasMany(Product, {
 //     foreignKey: 'user_id' 
 // });
 
-
 //PRODUCT ASSOCIATIONS
 Product.belongsTo(User, {
     foreignKey: {name: 'user_id', unique: false}
@@ -43,15 +42,15 @@ Rent.hasOne(Product, {
 });
 
 Rent.belongsToMany(User, {
-    through: "users_rent",
-    as: "users",
-    foreignKey: "user_id"
+    through: 'users_rent',
+    as: 'users',
+    foreignKey: 'rent_id'
 });
 
 User.belongsToMany(Rent, {
-    through: "users_rent",
-    as: "rents",
-    foreignKey: "rent_id"
+    through: 'users_rent',
+    as: 'rents',
+    foreignKey: 'user_id'
 });
 
 module.exports = {User, Category, Product, Rent, Transaction};
