@@ -46,7 +46,7 @@ Product.init(
         state: {
             type: DataTypes.ENUM({
                 values: ['available', 'not_available', 'renting', 'requested']
-              })
+            })
         },
         price: {
             type: DataTypes.DECIMAL(10, 2),
