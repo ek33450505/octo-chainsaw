@@ -47,10 +47,4 @@ Rent.belongsToMany(User, {
     foreignKey: 'rent_id'
 });
 
-User.belongsToMany(Rent, {
-    through: 'users_rent',
-    as: 'rents',
-    foreignKey: 'user_id'
-});
-
 module.exports = {User, Category, Product, Rent, Transaction};
