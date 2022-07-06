@@ -36,7 +36,9 @@ Product.init(
             type: DataTypes.STRING
         },
         state: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.ENUM({
+                values: ['available', 'not_available', 'renting', 'requested']
+              })
         },
         price: {
             type: DataTypes.DECIMAL(10, 2),
