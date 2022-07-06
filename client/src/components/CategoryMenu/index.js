@@ -129,12 +129,12 @@ export default function CategoryMenu() {
 
                         <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                             <div className="portfolio-wrap">
-                                {/* <img src="assets/img/portfolio/portfolio-9.jpg" className="img-fluid" alt=""> */}
+                                {/* <img src="./assets/img/portfolio/portfolio-9.jpg" className="img-fluid" alt="" /> */}
                                 <div className="portfolio-info">
                                     <h4>Web 3</h4>
                                     <p>Web</p>
                                     <div className="portfolio-links">
-                                        {/* <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a> */}
+                                        {/* <a href="./assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
                                     </div>
                                 </div>
