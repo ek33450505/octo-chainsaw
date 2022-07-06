@@ -18,6 +18,14 @@ Product.init(
                 key: 'id'
             }
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -36,7 +44,9 @@ Product.init(
             type: DataTypes.STRING
         },
         state: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.ENUM({
+                values: ['available', 'not_available', 'renting', 'requested']
+            })
         },
         price: {
             type: DataTypes.DECIMAL(10, 2),
