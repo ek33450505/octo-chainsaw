@@ -10,18 +10,16 @@ User.hasMany(Product, {
 });
 
 // User.hasMany(Rent, {
-//     foreignKey: 'user_id'
+//     foreignKey: 'user_id' 
 // });
-
 
 //PRODUCT ASSOCIATIONS
 Product.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+    foreignKey: { name: 'user_id', unique: false }
 });
 
 Product.belongsTo(Category, {
-    foreignKey: 'category_id'
+    foreignKey: { name: 'category_id', unique: false }
 });
 
 //CATEGORY
@@ -43,7 +41,11 @@ Rent.hasOne(Product, {
     foreignKey: 'product_id'
 });
 
-// Rent.belongsToMany(User,)
+Rent.belongsToMany(User, {
+    through: 'users_rent',
+    as: 'users',
+    foreignKey: 'rent_id'
+});
 
 Rent.belongsToMany(User, {
     through: 'users_rent',
