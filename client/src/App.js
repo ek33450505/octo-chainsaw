@@ -1,12 +1,10 @@
 import './App.css';
-import Nav from '../src/components/Nav';
-import CategoryMenu from './components/CategoryMenu';
+import Home from '../src/components/Home';
 
 function App() {
   return (
     <div>
-      <Nav />
-      <CategoryMenu />
+      <Home />
     </div>
   );
 }

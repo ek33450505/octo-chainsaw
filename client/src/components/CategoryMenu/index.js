@@ -17,7 +17,7 @@ export default function CategoryMenu() {
 
                         <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                             <div className="portfolio-wrap">
-                                {/* <img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt=""> */}
+                                <img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
                                 <div className="portfolio-info">
                                     <h4>App 1</h4>
                                     <p>App</p>
