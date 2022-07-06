@@ -1,5 +1,4 @@
-
-
+import React from "react";
 
 export default function Nav() {
 
@@ -7,40 +6,60 @@ export default function Nav() {
         //if user is logged in:
         if(0===1) {
             return (
-                <ul>
-                    <li>
-                        Create Listing
-                    </li>
-                    <li>
-                        Logout
-                    </li>
-                </ul>
+                <div>
+                    <header id="header" className="fixed-top d-flex align-items-center">
+                        <div className="container">
+                            <div className="header-container d-flex align-items-center justify-content-between">
+                                <div className="logo">
+                                    <h1 className="text-light"><a href="index.html"><span>rentIt</span></a></h1>
+                                </div>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><a className="nav-link scrollto" href="#categories">Categories</a></li>
+                                        <li><a className="nav-link scrollto" href="#account">Create Listing</a></li>
+                                        <li><a className="nav-link scrollto " href="#portfolio">My Account</a></li>
+                                        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
+                                        <li><a className="getstarted scrollto" href="#login">Logout</a></li>
+                                    </ul>
+                                    <i className="bi bi-list mobile-nav-toggle"></i>
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+                </div>
             );
         } else {
             //if user is not logged in:
             return (
-                <ul>
-                    <li>
-                        Signup
-                    </li>
-                    <li>
-                        Login
-                    </li>
-                </ul>
+                <div>
+                    <header id="header" className="fixed-top d-flex align-items-center">
+                        <div className="container">
+                            <div className="header-container d-flex align-items-center justify-content-between">
+                                <div className="logo">
+                                    <h1 className="text-light"><a href="index.html"><span>rentIt</span></a></h1>
+                                </div>
+                                <nav id="navbar" className="navbar">
+                                    <ul>
+                                        <li><a className="nav-link scrollto" href="#categories">Categories</a></li>
+                                        <li><a className="nav-link scrollto" href="#account">Create Listing</a></li>
+                                        <li><a className="nav-link scrollto " href="#portfolio">My Account</a></li>
+                                        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
+                                        <li><a className="nav-link scrollto" href="#logout">Logout</a></li>
+                                        <li><a className="getstarted scrollto" href="#login">Login</a></li>
+                                    </ul>
+                                    <i className="bi bi-list mobile-nav-toggle"></i>
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+                </div>
             );
         }
     }
     
     return (
-        <header>
-            <h1>
-                <span>😄 The RentIt App</span>
-            </h1>
-
-            <nav>
-                {showNav()}
-            </nav>
-        </header>
+        <nav>
+            {showNav()}
+        </nav>
     )
 }
-
