@@ -13,13 +13,6 @@ User.hasMany(Product, {
 //     foreignKey: 'user_id' 
 // });
 
-User.belongsToMany(Rent, {
-    through: 'users_rent',
-    as: 'rents',
-    foreignKey: 'user_id'
-})
-
-
 //PRODUCT ASSOCIATIONS
 Product.belongsTo(User, {
     foreignKey: 'user_id',
