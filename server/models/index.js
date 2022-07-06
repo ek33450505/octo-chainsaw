@@ -15,12 +15,11 @@ User.hasMany(Product, {
 
 //PRODUCT ASSOCIATIONS
 Product.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+    foreignKey: {name: 'user_id', unique: false}
 });
 
 Product.belongsTo(Category, {
-    foreignKey: 'category_id'
+    foreignKey: {name: 'category_id', unique: false}
 });
 
 //CATEGORY
@@ -40,10 +39,6 @@ Rent.hasOne(Transaction, {
 
 Rent.hasOne(Product, {
     foreignKey: 'product_id'
-});
-
-Rent.hasOne(Transaction, {
-    foreignKey: 'trxn_id'
 });
 
 Rent.belongsToMany(User, {
