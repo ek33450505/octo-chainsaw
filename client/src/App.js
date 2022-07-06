@@ -28,7 +28,9 @@ axios({
 function App() {
   return (
     <div>
-      <Home />
+        <Nav />
+        <Home />
+        <CategoryMenu />
     </div>
   );
 }
