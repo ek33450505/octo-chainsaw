@@ -29,15 +29,16 @@ router.get("/:id", (req, res) => {
           model: Category,
           attributes: ["name"]
         }
-      },
-      {
-        model: Rent,
-        attributes: ["id", "leaser_id", "trxn_id", "product_id", "start_date"],
-        include: {
-          model: Transaction,
-          attributes: ["id", "amount", "notes"]
-        }
       }
+      // {
+      //   model: Rent,
+      //   attributes: ["id", "leaser_id", "trxn_id", "product_id", "start_date"],
+      //   include: {
+      //     as: 'rents',
+      //     model: Transaction,
+      //     attributes: ["id", "amount", "notes"]
+      //   }
+      // }
     ]
   })
     .then(dbUserData => {
@@ -60,14 +61,14 @@ router.post("/", (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    zip:req.body.zip
+    zip: req.body.zip
   })
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-        
+
         res.json(dbUserData);
       });
     })

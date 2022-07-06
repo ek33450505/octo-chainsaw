@@ -47,11 +47,6 @@ Rent.belongsToMany(User, {
     foreignKey: 'rent_id'
 });
 
-Rent.belongsToMany(User, {
-    through: 'users_rent',
-    as: 'users',
-    foreignKey: 'rent_id'
-})
 User.belongsToMany(Rent, {
     through: 'users_rent',
     as: 'rents',
