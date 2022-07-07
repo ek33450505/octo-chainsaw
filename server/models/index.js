@@ -6,7 +6,7 @@ const Category = require('./Category');
 
 //USER ASSOCIATIONS
 User.hasMany(Product, {
-    foreignKey: 'user_id' 
+    foreignKey: 'user_id'
 });
 
 // User.hasMany(Rent, {
@@ -15,11 +15,11 @@ User.hasMany(Product, {
 
 //PRODUCT ASSOCIATIONS
 Product.belongsTo(User, {
-    foreignKey: {name: 'user_id', unique: false}
+    foreignKey: { name: 'user_id', unique: false }
 });
 
 Product.belongsTo(Category, {
-    foreignKey: {name: 'category_id', unique: false}
+    foreignKey: { name: 'category_id', unique: false }
 });
 
 //CATEGORY
@@ -47,4 +47,10 @@ Rent.belongsToMany(User, {
     foreignKey: 'rent_id'
 });
 
-module.exports = {User, Category, Product, Rent, Transaction};
+User.belongsToMany(Rent, {
+    through: 'users_rent',
+    as: 'rents',
+    foreignKey: 'user_id'
+})
+
+module.exports = { User, Category, Product, Rent, Transaction };
