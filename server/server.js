@@ -1,6 +1,12 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
+<<<<<<< HEAD
+=======
+const cors = require('cors')
+
+
+>>>>>>> develop
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -24,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
+app.use(cors)
 
 // Serve up static assets - update the back-end server's code to serve up the React front-end code in production
 console.log(process.env.NODE_ENV);
