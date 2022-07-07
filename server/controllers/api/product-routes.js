@@ -1,4 +1,15 @@
 const router = require("express").Router();
+const multer = require('multer')
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + file.originalname)
+
+  }
+})
+const upload = multer({ storage: storage })
 const { Category, Product, User } = require("../../models");
 const withAuth = require('../../utils/auth');
 
@@ -10,7 +21,7 @@ router.get("/", (req, res) => {
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
       console.log(err);
-      res.status(500). json(err);
+      res.status(500).json(err);
     });
 });
 
@@ -20,7 +31,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ["id", "name", "description", "image", "state", "price"],
+    attributes: ["id", "name", "description", "image_url", "state", "price"],
     include: [
       {
         model: User,
@@ -42,13 +53,13 @@ router.get("/:id", (req, res) => {
 });
 
 // create a product (add a listing)
-router.post("/", (req, res) => {
+router.post("/", upload.single('productImage'), (req, res) => {
   Product.create({
     category_id: req.body.category_id,
     user_id: req.body.user_id,  // change to session id eventually
     name: req.body.name,
     description: req.body.description,
-    image: req.body.image,
+    image_url: req.file.path,
     price: req.body.price
   })
     .then(dbUserData => res.json(dbUserData))

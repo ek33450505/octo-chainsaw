@@ -40,13 +40,13 @@ Product.init(
                 len: [1]
             }
         },
-        image: {
+        image_url: {
             type: DataTypes.STRING
         },
         state: {
             type: DataTypes.ENUM({
                 values: ['available', 'not_available', 'renting', 'requested']
-              })
+            })
         },
         price: {
             type: DataTypes.DECIMAL(10, 2),
