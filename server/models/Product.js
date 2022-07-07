@@ -40,7 +40,7 @@ Product.init(
                 len: [1]
             }
         },
-        image: {
+        image_url: {
             type: DataTypes.STRING
         },
         state: {
