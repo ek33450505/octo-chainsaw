@@ -22,20 +22,16 @@ const sess = {
 };
 
 app.use(session(sess));
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 // Serve up static assets - update the back-end server's code to serve up the React front-end code in production
-console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
-  console.log("prod test " + path.join(__dirname, '../client/build'))
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
-// app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(require('./controllers/'));
 app.use(cors)
-
-
 
 app.get('*', (req, res) => {
   console.log("prod get " + path.join(__dirname, '../client/build/index.html'))
