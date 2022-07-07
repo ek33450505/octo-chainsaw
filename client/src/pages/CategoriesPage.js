@@ -3,9 +3,7 @@ import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 
-
-
-const Home = () => {
+const CategoriesPage = () => {
     return (
         <div>
             <Nav />
@@ -16,5 +14,4 @@ const Home = () => {
     )
 }
 
-
-export default Home;
+export default CategoriesPage;

@@ -1,20 +1,20 @@
-import CategoryMenu from '../components/CategoryMenu';
+import ProductList from '../components/ProductList';
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 
 
 
-const Home = () => {
+const ProductsPage = () => {
     return (
         <div>
             <Nav />
             <Hero />
-            <CategoryMenu />
+            <ProductList />
             <Footer />
         </div>
     )
 }
 
 
-export default Home;
+export default ProductsPage;
