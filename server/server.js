@@ -1,12 +1,9 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-<<<<<<< HEAD
-=======
 const cors = require('cors')
 
 
->>>>>>> develop
 const app = express();
 
 const PORT = process.env.PORT || 3001;
