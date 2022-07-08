@@ -1,6 +1,6 @@
-import Nav from '../components/Nav';
-import Login from '../components/Login';
-import Footer from '../components/Footer';
+import Nav from '../components/Nav/nav.js';
+import Login from '../components/Login/login.js';
+import Footer from '../components/Footer/footer.js';
 
 const LoginPage = () => {
     return (

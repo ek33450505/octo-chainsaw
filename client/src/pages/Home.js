@@ -1,7 +1,7 @@
-import CategoryMenu from '../components/CategoryMenu';
-import Nav from '../components/Nav';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
+import CategoryMenu from '../components/CategoryMenu/categorymenu.js';
+import Nav from '../components/Nav/nav.js';
+import Hero from '../components/Hero/hero.js';
+import Footer from '../components/Footer/footer.js';
 
 
 

@@ -1,6 +1,6 @@
-import Nav from '../components/Nav';
-import MyAccount from '../components/MyAccount';
-import Footer from '../components/Footer';
+import Nav from '../components/Nav/nav.js';
+import MyAccount from '../components/MyAccount/myaccount.js';
+import Footer from '../components/Footer/footer.js';
 
 
 

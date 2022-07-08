@@ -1,6 +1,6 @@
-import Nav from '../components/Nav';
-import Signup from '../components/Signup';
-import Footer from '../components/Footer';
+import Nav from '../components/Nav/nav.js';
+import Signup from '../components/Signup/signup.js';
+import Footer from '../components/Footer/footer.js';
 
 const SignupPage = () => {
     return (

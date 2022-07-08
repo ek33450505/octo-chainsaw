@@ -30,16 +30,13 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <a href="/user/">Signup</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="/user/login">Login</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="/user/logout">Logout</a></li>
-
                                 </ul>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
                 <div className="container d-md-flex py-4">
-
                     <div className="me-md-auto text-center text-md-start">
                         <div className="copyright">
                             &copy; Copyright <strong><span>rentIt</span></strong>. All Rights Reserved
