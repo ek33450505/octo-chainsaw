@@ -19,8 +19,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
                                 <div className="portfolio-info">
-                                    <h4>App 1</h4>
-                                    <p>App</p>
+                                    <h4>Outdoor Gear</h4>
                                     <div className="portfolio-links">
                                         <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
                                         <a title="More Details"><i className="bx bx-link"></i></a>
@@ -33,8 +32,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-2.jpg?raw=true' className="img-fluid" alt="" />
                                 <div className="portfolio-info">
-                                    <h4>Web 3</h4>
-                                    <p>Web</p>
+                                    <h4>Tools</h4>
                                     <div className="portfolio-links">
                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -47,8 +45,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-3.jpg?raw=true' className="img-fluid" alt="" />
                                 <div className="portfolio-info">
-                                    <h4>App 2</h4>
-                                    <p>App</p>
+                                    <h4>Sports Equipment</h4>
                                     <div className="portfolio-links">
                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -61,8 +58,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-4.jpg?raw=true' className="img-fluid" alt="" />
                                 <div className="portfolio-info">
-                                    <h4>Card 2</h4>
-                                    <p>Card</p>
+                                    <h4>Tech</h4>
                                     <div className="portfolio-links">
                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -75,8 +71,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-5.jpg?raw=true' className="img-fluid" alt="" />
                                 <div className="portfolio-info">
-                                    <h4>Web 2</h4>
-                                    <p>Web</p>
+                                    <h4>Motorized Vehicles</h4>
                                     <div className="portfolio-links">
                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -89,8 +84,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-6.jpg?raw=true' className="img-fluid" alt="" />
                                 <div className="portfolio-info">
-                                    <h4>App 3</h4>
-                                    <p>App</p>
+                                    <h4>Instruments</h4>
                                     <div className="portfolio-links">
                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -103,8 +97,7 @@ export default function CategoryMenu() {
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-7.jpg?raw=true' className="img-fluid" alt="" />
                                 <div className="portfolio-info">
-                                    <h4>Card 1</h4>
-                                    <p>Card</p>
+                                    <h4>For Kids</h4>
                                     <div className="portfolio-links">
                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a> */}
                                         <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
