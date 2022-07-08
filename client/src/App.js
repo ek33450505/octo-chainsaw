@@ -1,7 +1,7 @@
 import './App.css';
 import Home from '../src/pages/Home';
-const axios = require('axios').default;
 
+const axios = require('axios').default;
 
 // send a POST request
 axios({

@@ -15,11 +15,11 @@ export default function Nav() {
                                 </div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
-                                        <li><a className="nav-link scrollto" href="#categories">Categories</a></li>
-                                        <li><a className="nav-link scrollto" href="#account">Create Listing</a></li>
-                                        <li><a className="nav-link scrollto " href="#portfolio">My Account</a></li>
-                                        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
-                                        <li><a className="getstarted scrollto" href="#login">Logout</a></li>
+                                        <li><a className="nav-link scrollto" href="/category/">Categories</a></li>
+                                        <li><a className="nav-link scrollto" href="/product/">Create Listing</a></li>
+                                        <li><a className="nav-link scrollto " href="/user/">My Account</a></li>
+                                        {/* <li><a className="nav-link scrollto" href="/">Contact</a></li> */}
+                                        <li><a className="getstarted scrollto" href="/user/logout">Logout</a></li>
                                     </ul>
                                     <i className="bi bi-list mobile-nav-toggle"></i>
                                 </nav>
@@ -40,12 +40,12 @@ export default function Nav() {
                                 </div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
-                                        <li><a className="nav-link scrollto" href="#categories">Categories</a></li>
-                                        <li><a className="nav-link scrollto" href="#account">Create Listing</a></li>
-                                        <li><a className="nav-link scrollto " href="#portfolio">My Account</a></li>
-                                        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
-                                        <li><a className="nav-link scrollto" href="#sign-up">Sign Up</a></li>
-                                        <li><a className="getstarted scrollto" href="#login">Login</a></li>
+                                    <li><a className="nav-link scrollto" href="/category/">Categories</a></li>
+                                        <li><a className="nav-link scrollto" href="/product/">Create Listing</a></li>
+                                        <li><a className="nav-link scrollto " href="/user/">My Account</a></li>
+                                        {/* <li><a className="nav-link scrollto" href="/">Contact</a></li> */}
+                                        <li><a className="nav-link scrollto" href="/user/">Sign Up</a></li>
+                                        <li><a className="getstarted scrollto" href="/user/login/">Login</a></li>
                                     </ul>
                                     <i className="bi bi-list mobile-nav-toggle"></i>
                                 </nav>

@@ -16,19 +16,21 @@ export default function Footer() {
                             <div className="col-lg-2 col-md-6 footer-links">
                                 <h4>Useful Links</h4>
                                 <ul>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Categories</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Create Listing</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/category">Categories</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/product/">Create Listing</a></li>
+                                    {/* <li><i className="bx bx-chevron-right"></i> <a href="/">Contact</a></li> */}
                                 </ul>
                             </div>
 
                             <div className="col-lg-3 col-md-6 footer-links">
                                 <h4>Account</h4>
                                 <ul>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">My Account</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Signup</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Login</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/user/">My Account</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/user/">Signup</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/user/login">Login</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/user/logout">Logout</a></li>
+
                                 </ul>
                             </div>
 
