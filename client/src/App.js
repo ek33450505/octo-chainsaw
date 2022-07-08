@@ -1,29 +1,21 @@
 import './App.css';
+<<<<<<< HEAD
 import Home from '../src/pages/Home';
+=======
+import Home from './pages/Home';
+import React, {useEffect} from 'react';
+const axios = require('axios').default;
+>>>>>>> 74ffe367045a53d3af5e9f993d04ef5366aec227
 
 const axios = require('axios').default;
 
 // send a POST request
-axios({
-  method: 'post',
-  url: '/api/user',
-  data: {
-    username: "jim",
-    email: "jim@gmail.com",
-    password: "password1234",
-    zip: "43214"
-  }
-})
-.then(function (response) {
-  // handle success
-  console.log(response);
-})
-.catch(function (error) {
-  // handle error
-  console.log(error);
-})
+
 
 function App() {
+  // useEffect(()=>{
+    
+  // }, [])
   return (
     <div>
         <Home />
