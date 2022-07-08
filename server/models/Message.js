@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class ReturnMessage extends Model {}
+class Message extends Model {}
 
-ReturnMessage.init(
+Message.init(
     {
         id: {
           type: DataTypes.INTEGER,
@@ -11,14 +11,14 @@ ReturnMessage.init(
           primaryKey: true,
           autoIncrement: true
         },
-        return_message_text: {
+        message_text: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
             len: [1]
           }
         },
-        renter_id: {
+        author_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -26,7 +26,7 @@ ReturnMessage.init(
                 key: 'id'
             }
         },
-        leaser_id: {
+        recipiant_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -34,10 +34,10 @@ ReturnMessage.init(
                 key: 'id'
             }
         },
-        sendMessage_id: {
+        product_id: {
           type: DataTypes.INTEGER,
           references: {
-            model: 'sendMessage',
+            model: 'product',
             key: 'id'
           }
         }
@@ -46,8 +46,8 @@ ReturnMessage.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'returnMessage'
+        modelName: 'Message'
       }
     );
     
-    module.exports = ReturnMessage;
+    module.exports = Message;

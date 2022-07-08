@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { SendMessage } = require('../../models');
+const { Message } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // Get all messages 
 router.get('/', (req, res) => {
-    SendMessage.findAll({
+    Message.findAll({
       attributes: [
         'id',
-        'send_message_text',
-        'renter_id',
-        'leaser_id',
+        'message_text',
+        'author_id',
+        'recipiant_id',
         'product_id'
       ]
     })
-      .then(dbSendMessagetData => res.json(dbSendMessagetData))
+      .then(dbMessagetData => res.json(dbMessagetData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -22,13 +22,13 @@ router.get('/', (req, res) => {
   
   // Create a message to be sent
   router.post('/', (req, res) => {
-    SendMessage.create({
-      send_message_text: req.body.send_message_text,
-      renter_id: req.session.renter_id,
-      leaser_id: req.body.leaser_id,
+    Message.create({
+      message_text: req.body.message_text,
+      author_id: req.session.author_id,
+      recipiant_id: req.body.recipiant_id,
       product_id: req.body.product_id
     })
-      .then(dbSendMessagetData => res.json(dbSendMessagetData))
+      .then(dbMessagetData => res.json(dbMessagetData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
@@ -40,17 +40,17 @@ router.get('/', (req, res) => {
   
   // Delete message
   router.delete('/:id', (req, res) => {
-    SendMessage.destroy({
+    Message.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(dbSendMessagetData => {
-        if (!dbSendMessagetData) {
+      .then(dbMessagetData => {
+        if (!dbMessagetData) {
           res.status(404).json({ message: 'No message found with this id!' });
           return;
         }
-        res.json(dbSendMessagetData);
+        res.json(dbMessagetData);
       })
       .catch(err => {
         console.log(err);
