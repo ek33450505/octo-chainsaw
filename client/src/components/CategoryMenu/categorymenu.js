@@ -12,52 +12,54 @@ export default function CategoryMenu() {
 
     const fetchCategories = async () => {
         const response = await axios({
-        method: 'get',
-        url: '/api/category'
+            method: 'get',
+            url: '/api/category'
 
-    })
-        .then(function (response) {
-            console.log(response.data);
-            setCategories(response.data);
         })
-    }
+            .then(function (response) {
+                console.log(response.data);
+                setCategories(response.data);
+            })
+    };
 
     return (
+        <>
 
+            <div>
+                <section id="portfolio" className="portfolio">
+                    <div className="container">
 
-        <div>
-            <section id="portfolio" className="portfolio">
-                <div className="container">
-
-                    <div className="section-title text-center" data-aos="fade-left">
-                        <h2>Categories</h2>
-                    </div>
-
-                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
-                                <div className="portfolio-info">
-                                    {/* <h4>Outdoor Gear</h4> */}
-                                    <div>
-                                        { categories.map(element => {
-                                            return <h2> { element.name } </h2>
-                                        })}
-                                    </div>
-                                    <div className="portfolio-links">
-                                        <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                                        <a title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="section-title text-center" data-aos="fade-left">
+                            <h2>Categories</h2>
                         </div>
+                        {
+                            categories.map(element => {
+                                return (
+                                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                                            <div className="portfolio-wrap">
+                                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
+                                                <div className="portfolio-info">
+                                                  
+                                                    <div>
+                                                        {element.name}
+                                                    </div>
+                                                    
+                                                    <div className="portfolio-links">
+                                                        <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
+                                                        <a title="More Details"><i className="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
                     </div>
-                </div>
-            </section>
-        </div>
-
-
+                </section>
+            </div>
+        </>
     )
 }
 
