@@ -9,7 +9,7 @@ export function MyAccount() {
                         <div className="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
                             <div className="content">
                                 <h3>My Account</h3>
-                                <p>Here you can find information about your previous rentals, listings, and messages you've sent to other rentIt users.</p>
+                                <p>Here you can find information about your previous rentals, listings, and messages you've sent to other RentIt users.</p>
                             </div>
                         </div>
                         <div className="col-lg-8 d-flex align-items-stretch">

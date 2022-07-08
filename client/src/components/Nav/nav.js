@@ -11,7 +11,8 @@ export default function Nav() {
                         <div className="container">
                             <div className="header-container d-flex align-items-center justify-content-between">
                                 <div className="logo">
-                                    <h1 className="text-light"><a href="index.html"><span>rentIt</span></a></h1>
+                                    {/* <h1 className="text-light"><a href="index.html"><span>RentIt</span></a></h1> */}
+                                    <a class="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg" class="d-inline-block align-top" alt="logo"/></a>
                                 </div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
@@ -36,7 +37,9 @@ export default function Nav() {
                         <div className="container">
                             <div className="header-container d-flex align-items-center justify-content-between">
                                 <div className="logo">
-                                    <h1 className="text-light"><a href="index.html"><span>rentIt</span></a></h1>
+                                    {/* <h1 className="text-light"><a href="index.html"><span>RentIt</span></a></h1> */}
+                                    <a class="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg" class="d-inline-block align-top" alt="logo"/></a>
+
                                 </div>
                                 <nav id="navbar" className="navbar">
                                     <ul>
