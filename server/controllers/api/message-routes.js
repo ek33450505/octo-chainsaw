@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         'id',
         'message_text',
         'author_id',
-        'recipiant_id',
+        'recipient_id',
         'product_id'
       ]
     })
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
       message_text: req.body.message_text,
       // author_id: req.session.author_id,
       author_id: req.body.author_id,
-      recipiant_id: req.body.recipiant_id,
+      recipient_id: req.body.recipient_id,
       product_id: req.body.product_id
     })
       .then(dbMessagetData => res.json(dbMessagetData))

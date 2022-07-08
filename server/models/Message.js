@@ -26,7 +26,7 @@ Message.init(
                 key: 'id'
             }
         },
-        recipiant_id: {
+        recipient_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
