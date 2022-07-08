@@ -18,7 +18,7 @@ export default function Nav() {
                                         <li><a className="nav-link scrollto" href="/category/">Categories</a></li>
                                         <li><a className="nav-link scrollto" href="/product/">Create Listing</a></li>
                                         <li><a className="nav-link scrollto " href="/user/">My Account</a></li>
-                                        {/* <li><a className="nav-link scrollto" href="/">Contact</a></li> */}
+                                        <li><a className="nav-link scrollto" href="/">Contact</a></li>
                                         <li><a className="getstarted scrollto" href="/user/logout">Logout</a></li>
                                     </ul>
                                     <i className="bi bi-list mobile-nav-toggle"></i>

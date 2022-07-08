@@ -19,7 +19,7 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <a href="/">Home</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="/category">Categories</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="/product/">Create Listing</a></li>
-                                    {/* <li><i className="bx bx-chevron-right"></i> <a href="/">Contact</a></li> */}
+                                    <li><i className="bx bx-chevron-right"></i> <a href="/">Contact</a></li>
                                 </ul>
                             </div>
 
