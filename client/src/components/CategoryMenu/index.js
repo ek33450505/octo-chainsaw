@@ -1,17 +1,37 @@
 
+const axios = require('axios').default;
+
 
 export default function CategoryMenu() {
-    //future: will query our database for the categories
-    const categories = ['Outdoor Gear', 'Tools', 'Sports Equipment', 'Tech', 'Motorized Vehicles', 'Instruments', 'For Kids'];
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetchCategories();
+      }, []);
+
+    const fetchCategories = await axios({
+        method: 'get',
+        url: '/api/category'
+        
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setCategories(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+    
 
     return (
         <div>
         <h2>Categories</h2>
-        {categories.map((item) => (
+        {/* {categories.map((item) => (
             <button>
-                {item}
+                {item.name}
             </button>
-        ))}
+        ))} */}
         </div>
     )
 }
