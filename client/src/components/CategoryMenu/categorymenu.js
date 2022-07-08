@@ -11,7 +11,7 @@ export default function CategoryMenu() {
     }, []);
 
     const fetchCategories = async () => {
-       await axios({
+        await axios({
             method: 'get',
             url: '/api/category'
 
@@ -32,30 +32,27 @@ export default function CategoryMenu() {
                         <div className="section-title text-center" data-aos="fade-left">
                             <h2>Categories</h2>
                         </div>
-                        {
-                            categories.map(element => {
-                                return (
-                                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                                            <div className="portfolio-wrap">
-                                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
-                                                <div className="portfolio-info">
-                                                  
-                                                    <div>
-                                                        {element.name}
-                                                    </div>
+                        {categories.map(element => {
+                            return (
+                                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                                                    <div className="portfolio-links">
-                                                        <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                                                        <a title="More Details"><i className="bx bx-link"></i></a>
-                                                    </div>
+                                    <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                                        <div className="portfolio-wrap">
+                                            <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
+                                            <div className="portfolio-info">
+                                                <h4>{element.name}</h4>
+                                                <div className="portfolio-links">
+                                                    <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
+                                                    <a title="More Details"><i className="bx bx-link"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                )
-                            })}
+                                </div>
+                            )
+                        })}
+
                     </div>
                 </section>
             </div>

@@ -3,9 +3,6 @@ import Home from './pages/Home';
 
 
 
-// send a POST request
-
-
 function App() {
   
   return (
