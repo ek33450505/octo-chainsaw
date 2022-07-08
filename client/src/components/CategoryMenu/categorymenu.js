@@ -11,7 +11,7 @@ export default function CategoryMenu() {
     }, []);
 
     const fetchCategories = async () => {
-        const response = await axios({
+       await axios({
             method: 'get',
             url: '/api/category'
 
@@ -45,7 +45,7 @@ export default function CategoryMenu() {
                                                     <div>
                                                         {element.name}
                                                     </div>
-                                                    
+
                                                     <div className="portfolio-links">
                                                         <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
                                                         <a title="More Details"><i className="bx bx-link"></i></a>
@@ -64,16 +64,6 @@ export default function CategoryMenu() {
 }
 
 
-
-
-{/* <div>
-    <h2>Categories</h2>
-    {categories.map((item) => (
-        <button>
-            {item.name}
-        </button>
-    ))}
-</div > */}
 
 
 
