@@ -6,7 +6,7 @@ const { Message } = require('../../models');
 router.get('/', (req, res) => {
     Message.findAll({
       attributes: [
-        'message_id',
+        'id',
         'message_text',
         'author_id',
         'recipiant_id',
@@ -24,7 +24,8 @@ router.get('/', (req, res) => {
   router.post('/', (req, res) => {
     Message.create({
       message_text: req.body.message_text,
-      author_id: req.session.author_id,
+      // author_id: req.session.author_id,
+      author_id: req.body.author_id,
       recipiant_id: req.body.recipiant_id,
       product_id: req.body.product_id
     })
