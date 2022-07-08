@@ -40,6 +40,12 @@ User.bulkCreate(
         email: 'elephant@gmail.com',
         password: 'password',
         zip: '43214'
+    },
+    {
+        username: 'ancs214',
+        email: 'ancs214@gmail.com',
+        password: 'password1234',
+        zip: '43214'
     }
     ])
 
