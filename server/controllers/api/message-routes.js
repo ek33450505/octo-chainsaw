@@ -6,7 +6,7 @@ const { Message } = require('../../models');
 router.get('/', (req, res) => {
     Message.findAll({
       attributes: [
-        'id',
+        'message_id',
         'message_text',
         'author_id',
         'recipiant_id',
