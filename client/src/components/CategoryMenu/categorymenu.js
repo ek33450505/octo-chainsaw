@@ -39,7 +39,7 @@ export default function CategoryMenu() {
 
                         {categories.map(element => {
                             return (
-                                <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                                <div className="row" data-aos="fade-up" data-aos-delay="200">
 
                                     <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div className="portfolio-wrap">
