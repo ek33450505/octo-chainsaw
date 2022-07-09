@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Login() {
+export default function Login() {
     return (
         <div>
             <section id="login" className="login">
