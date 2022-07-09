@@ -27,7 +27,7 @@ export default function CategoryMenu() {
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-2.jpg?raw=true' className="img-fluid" alt="" />
@@ -92,7 +92,7 @@ export default function CategoryMenu() {
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>
