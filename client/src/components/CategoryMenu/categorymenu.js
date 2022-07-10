@@ -36,26 +36,10 @@ export default function CategoryMenu() {
                         <div className="section-title text-center" data-aos="fade-left">
                             <h2>Categories</h2>
                         </div>
-<<<<<<< HEAD
-                        
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-2.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>Tools</h4>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-=======
 
                         {categories.map(element => {
                             return (
                                 <div className="row" data-aos="fade-up" data-aos-delay="200">
->>>>>>> c3d50e194c31dee737353025ca57fae064e4c630
 
                                     <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div className="portfolio-wrap">
@@ -70,54 +54,6 @@ export default function CategoryMenu() {
                                         </div>
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-4.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>Tech</h4>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-5.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>Motorized Vehicles</h4>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-6.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>Instruments</h4>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </div>
-=======
                             )
                         })}
 
@@ -125,7 +61,6 @@ export default function CategoryMenu() {
                 </section>
             </div>
         </>
->>>>>>> c3d50e194c31dee737353025ca57fae064e4c630
     )
 }
 
