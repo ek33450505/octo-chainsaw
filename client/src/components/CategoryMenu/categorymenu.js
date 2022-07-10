@@ -63,8 +63,6 @@ export default function CategoryMenu() {
         </>
     )
 }
-<<<<<<< HEAD
-=======
 
 
 
@@ -218,4 +216,3 @@ export default function CategoryMenu() {
 //     //     </button>
 //     // ))}
 // }
->>>>>>> c3d50e194c31dee737353025ca57fae064e4c630
