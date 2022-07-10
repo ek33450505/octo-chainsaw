@@ -27,7 +27,7 @@ export default function CategoryMenu() {
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                             <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-2.jpg?raw=true' className="img-fluid" alt="" />
@@ -93,49 +93,7 @@ export default function CategoryMenu() {
                             </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-7.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>For Kids</h4>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-8.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>Card 3</h4>
-                                    <p>Card</p>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-9.jpg?raw=true' className="img-fluid" alt="" />
-                                <div className="portfolio-info">
-                                    <h4>Web 3</h4>
-                                    <p>Web</p>
-                                    <div className="portfolio-links">
-                                        {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a> */}
-                                        <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
             </section>
         </div>
