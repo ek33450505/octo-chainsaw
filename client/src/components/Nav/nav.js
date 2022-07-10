@@ -41,9 +41,7 @@ export default function Nav() {
                                 <nav id="navbar" className="navbar">
                                     <ul>
                                     <li><a className="nav-link scrollto" href="/category/">Categories</a></li>
-                                        <li><a className="nav-link scrollto" href="/product/">Create Listing</a></li>
-                                        <li><a className="nav-link scrollto " href="/user/">My Account</a></li>
-                                        {/* <li><a className="nav-link scrollto" href="/">Contact</a></li> */}
+                                        <li><a className="nav-link scrollto" href="/">Contact</a></li>
                                         <li><a className="nav-link scrollto" href="/user/">Sign Up</a></li>
                                         <li><a className="getstarted scrollto" href="/user/login/">Login</a></li>
                                     </ul>
