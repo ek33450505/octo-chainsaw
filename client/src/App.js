@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home';
 import React, {useEffect} from 'react';
-import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
 const axios = require('axios').default;
 
 // send a POST request
@@ -13,7 +13,7 @@ function App() {
   // }, [])
   return (
     <div>
-        <SignupPage />
+        <LoginPage />
     </div>
   );
 }
