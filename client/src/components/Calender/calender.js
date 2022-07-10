@@ -7,35 +7,33 @@ import { addDays } from 'date-fns'
 
 
 export default function Calender() {
-    const [startDate, setStartDate] = useState()
-    const [endDate, setEndDate] = useState(null)
-    function onChangeDateHandler(dates) {
-        const [start, end] = dates
-        setStartDate(start)
-        setEndDate(end)
-        console.log(start, end)
-    }
 
+
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
     return (
-        <form>
-            <fieldset>
-                <label>
-                    <p>Please select the Dates you would like to rent this Product</p>
-                    <DatePicker
-                        dateFormat={'yyyy/MM/dd'}
-                        selectsRange={true}
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={addDays(new Date(), 1)}
-                        maxDate={addDays(new Date(), 365)}
-                        onChange={onChangeDateHandler} />
-                </label>
-            </fieldset>
-            <input
-                type='submit'
-                value='submit'
-                onClick={() => console.log('')}
-            />
-        </form>
-    )
-}
+        <>
+            <form>
+                <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    selectsStart
+                    startDate={startDate}
+                    endDate={endDate}
+                    minDate={addDays(new Date(), 1)}
+                    maxDate={addDays(new Date(), 365)}
+                />
+                <DatePicker
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    selectsEnd
+                    startDate={startDate}
+                    endDate={endDate}
+                    minDate={startDate}
+                    maxDate={addDays(new Date(), 365)}
+                />
+            </form>
+        </>
+    );
+};
+

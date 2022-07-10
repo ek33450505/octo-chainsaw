@@ -1,20 +1,16 @@
 import './App.css';
 import Home from './pages/Home';
-import React, {useEffect} from 'react';
-const axios = require('axios').default;
+import React, { useEffect } from 'react';
+import Calender from './components/Calender/calender';
+import CreateListingPage from './pages/CreateListingPage';
 
-const axios = require('axios').default;
-
-// send a POST request
 
 
 function App() {
-  // useEffect(()=>{
-    
-  // }, [])
+
   return (
     <div>
-        <Home />
+      <CreateListingPage />
     </div>
   );
 }

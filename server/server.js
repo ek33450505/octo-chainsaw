@@ -28,6 +28,7 @@ app.use(express.json());
 // Serve up static assets - update the back-end server's code to serve up the React front-end code in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use('/uploads', express.static('uploads'));
 }
 
 app.use(require('./controllers/'));

@@ -16,7 +16,7 @@ const withAuth = require('../../utils/auth');
 // get all products
 router.get("/", (req, res) => {
   Product.findAll({
-    attributes: ["id", 'category_id', "name", "description", "image", "state", "price"]
+    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"]
   })
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
@@ -60,6 +60,7 @@ router.post("/", upload.single('productImage'), (req, res) => {
     name: req.body.name,
     description: req.body.description,
     image_url: req.file.path,
+    state: req.body.state,
     price: req.body.price
   })
     .then(dbUserData => res.json(dbUserData))
