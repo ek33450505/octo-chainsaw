@@ -1,31 +1,37 @@
-
+import { Link } from "react-router-dom";
 
 
 export default function Nav() {
 
     function showNav() {
-        //if user is logged in:
-        if(0===1) {
+        //future: place authentication functions
+        if(0===0) {
             return (
                 <ul>
-                    <li>
+                    <Link to='/api/category'>
+                        Categories
+                    </Link>
+                    <Link to='/'>
                         Create Listing
-                    </li>
-                    <li>
+                    </Link>
+                    <Link to='/'>
                         Logout
-                    </li>
+                    </Link>
                 </ul>
             );
         } else {
             //if user is not logged in:
             return (
                 <ul>
-                    <li>
-                        Signup
-                    </li>
-                    <li>
+                     <Link to='/api/category'>
+                        Categories
+                    </Link>
+                    <Link to='/'>
                         Login
-                    </li>
+                    </Link>
+                    <Link to='/'>
+                        Signup
+                    </Link>
                 </ul>
             );
         }
@@ -34,7 +40,7 @@ export default function Nav() {
     return (
         <header>
             <h1>
-                <span>😄 The RentIt App</span>
+                <Link to='/'><span>😄 The RentIt App</span></Link>
             </h1>
 
             <nav>

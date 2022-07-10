@@ -1,12 +1,10 @@
 import CategoryMenu from '../components/CategoryMenu';
-import ProductList from '../components/ProductList';
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
-        <main>
-            <CategoryMenu />
-            <ProductList />
-        </main>
+        <>
+        </>
     )
 }
 

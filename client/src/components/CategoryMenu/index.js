@@ -1,37 +1,43 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from 'axios';
 
-const axios = require('axios').default;
 
 
 export default function CategoryMenu() {
-    const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
-        fetchCategories();
-      }, []);
+  //on page render, run fetch function
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
-    const fetchCategories = await axios({
-        method: 'get',
-        url: '/api/category'
-        
-      })
+  //axios get request to fetch all categories
+  const fetchCategories = async () => {
+    await axios({
+      method: 'get',
+      url: '/api/category'
+
+    })
+      //update the state with category data
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         setCategories(response.data);
       })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-    
+  };
 
-    return (
-        <div>
-        <h2>Categories</h2>
-        {/* {categories.map((item) => (
-            <button>
-                {item.name}
-            </button>
-        ))} */}
-        </div>
-    )
+  //map categories to cards
+  return (
+    <div>
+      {categories.map(element => {
+        return (
+          <Link to='/api/product'>
+            <h2>{element.name}</h2>
+          </Link>
+        )
+      })}
+    </div>
+  )
 }
+
+
