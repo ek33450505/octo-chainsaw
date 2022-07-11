@@ -1,8 +1,43 @@
-import React from 'react';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import Auth from '../../utils/auth';
+
 
 export default function Message() {
-    //future: will query our database for the categories
+  const [messages, setMessages] = useState([]);
 
+  //on page render, run fetch function
+  useEffect(() => {
+    fetchMessages();
+  }, []);
+
+  //axios get request to fetch all categories
+  const fetchMessages = async () => {
+    await axios({
+      method: 'get',
+      url: '/api/message'
+
+    })
+      //update the state with category data
+      .then(function (response) {
+        // console.log(response.data);
+        setMessages(response.data);
+      })
+  };
+
+  //map categories to cards
+  return (
+    <div>
+      {messages.map(element => {
+        return (
+          <Link to='/api/message'>
+            <h2>{element.name}</h2>
+          </Link>
+        )
+      })}
+    </div>
+  )}
   
     return (
       <section>
@@ -23,4 +58,3 @@ export default function Message() {
         </form>
       </section>
     );
-  }

@@ -1,6 +1,49 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import Auth from '../../utils/auth';
 
 export default function MyAccount() {
+    const [user, setUser] = useState([]);
+
+    getProfile();
+
+    // on page render, run fetch function
+    useEffect(() => {
+        fetchUser(user_id);
+    }, []);
+
+    // axios get request to fetch user
+    const fetchUser = async () => {
+        await axios({
+            method: 'get',
+            url: '/api/user/:id'
+        })
+
+        // update the state with user data
+        .then(function (response) {
+            console.log(response.data);
+            setUser(response.data);
+        })
+    };
+
+    // map user info to page
+    return (
+        <div>
+            {user.map(element => {
+                return (
+                    <>
+                        <Link to='/api/user/:id' key={element.id}>
+                            <h4 key={element.id}>{element.name}</h4>
+                        </Link>
+                        <p>{ element.message }</p>
+                        {/* <p>{ element.state }</p>
+                        <p>{ element.price }</p> */}
+                    </>
+                )
+            })}
+        </div>
+    )}
 
     return (
         <>
@@ -51,4 +94,3 @@ export default function MyAccount() {
             </div>
         </>
     )
-}
