@@ -25,18 +25,23 @@ export default function CategoryMenu() {
             })
     };
 
+    //messing around with isolating the category.name 
     const filterResult = async (e) => {
         // console.log(e.target.innerText);
         axios.get('/api/product')
-            .then(function(response) {
-                console.log(response.data);
-            })
+            .then(function (response) {
+                const data = response.data;
+                data.map(element => {
+                    console.log(element.category.name);
+                })
+            }
+            )
     }
 
 
     //map categories to cards
     return (
-       
+
         <>
 
             <div>
