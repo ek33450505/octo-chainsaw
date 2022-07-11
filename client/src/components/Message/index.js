@@ -16,7 +16,7 @@ export default function Message() {
   const fetchMessages = async () => {
     await axios({
       method: 'get',
-      url: '/api/message/:id'
+      url: '/api/message'
 
     })
       //update the state with category data
@@ -31,7 +31,7 @@ export default function Message() {
     <div>
       {messages.map(element => {
         return (
-          <Link to='/api/message/:id'>
+          <Link to='/api/message'>
             <h2>{element.name}</h2>
           </Link>
         )

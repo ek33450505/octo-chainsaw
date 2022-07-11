@@ -1,30 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from 'axios';
-// const axios = require('axios').default;
-
+import React from "react";
 
 export default function MyAccount() {
-    const [user, setUser] = useState([]);
-
-    //on page render, run fetch function
-    useEffect(() => {
-        fetchUser();
-    }, []);
-
-    //axios get request to fetch all categories
-    const fetchUser = async () => {
-        await axios({
-            method: 'get',
-            url: '/api/user/:id'
-
-        })
-            //update the state with category data
-            .then(function (response) {
-                // console.log(response.data);
-                setUser(response.data);
-            })
-    };
-
 
     return (
         <>
