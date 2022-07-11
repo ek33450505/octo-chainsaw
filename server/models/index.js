@@ -3,6 +3,8 @@ const Transaction = require('./Transaction');
 const Rent = require('./Rent');
 const Product = require('./Product');
 const Category = require('./Category');
+const Message = require('./Message')
+
 
 //USER ASSOCIATIONS
 User.hasMany(Product, {
@@ -51,6 +53,19 @@ User.belongsToMany(Rent, {
     through: 'users_rent',
     as: 'rents',
     foreignKey: 'user_id'
-})
+});
 
-module.exports = { User, Category, Product, Rent, Transaction };
+// messages
+Message.hasOne(Product, {
+    foreignKey: 'product_id'
+});
+
+Message.belongsToMany(User, {
+    through: 'users_message',
+    as: 'message',
+    foreignKey: 'message_id'
+});
+
+
+
+module.exports = { User, Category, Product, Rent, Transaction, Message };

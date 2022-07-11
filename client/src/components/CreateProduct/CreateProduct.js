@@ -51,7 +51,7 @@ export default function CreateProduct() {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-                .then(res => console.log(res))
+                .then(res => res.json('Your Product has been Created'))
                 .catch(err => console.log(err))
         } catch (err) {
             console.log(err)
