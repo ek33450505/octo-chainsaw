@@ -1,31 +1,47 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import Auth from '../../utils/auth';
 
+// route to get logged in user's info (needs the token)
+export const getMe = (token) => {
+    return fetch('/api/users/me', {
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+    });
+  };
+
 export default function MyAccount() {
-    const [user, setUser] = useState([]);
+    const [userData, setUserData] = useState({});
 
-    getProfile();
-
-    // on page render, run fetch function
+    // use this to determine if `useEffect()` hook needs to run again
+    const userDataLength = Object.keys(userData).length;
+  
     useEffect(() => {
-        fetchUser(user_id);
-    }, []);
-
-    // axios get request to fetch user
-    const fetchUser = async () => {
-        await axios({
-            method: 'get',
-            url: '/api/user/:id'
-        })
-
-        // update the state with user data
-        .then(function (response) {
-            console.log(response.data);
-            setUser(response.data);
-        })
-    };
+      const getUserData = async () => {
+        try {
+          const token = Auth.loggedIn() ? Auth.getToken() : null;
+  
+          if (!token) {
+            return false;
+          }
+  
+          const response = await getMe(token);
+  
+          if (!response.ok) {
+            throw new Error('something went wrong!');
+          }
+  
+          const user = await response.json();
+          setUserData(user);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+  
+      getUserData();
+    }, [userDataLength]);
 
     // map user info to page
     return (
@@ -33,7 +49,7 @@ export default function MyAccount() {
             {user.map(element => {
                 return (
                     <>
-                        <Link to='/api/user/:id' key={element.id}>
+                        <Link to='/api/user/me' key={element.id}>
                             <h4 key={element.id}>{element.name}</h4>
                         </Link>
                         <p>{ element.message }</p>
