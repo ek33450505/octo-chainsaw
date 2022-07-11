@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Category, Product, Rent, Transaction } = require("../../models");
-const withAuth = require('../../utils/auth');
+const { withAuth, signToken } = require('../../utils/auth');
 
 // get all users
 router.get("/", (req, res) => {
@@ -55,7 +55,6 @@ router.get("/:id", (req, res) => {
 });
 
 // create a new user
-// USE JWT HERE!!!!!!!!!
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
@@ -64,13 +63,8 @@ router.post("/", (req, res) => {
     zip: req.body.zip
   })
     .then(dbUserData => {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-
-        res.json(dbUserData);
-      });
+      const token = signToken(dbUserData);
+      res.json({ token, user: dbUserData });
     })
     .catch(err => {
       console.log(err);
@@ -79,7 +73,6 @@ router.post("/", (req, res) => {
 });
 
 // login route
-// USE JWT HERE!!!!!!!!!
 router.post("/login", (req, res) => {
   User.findOne({
     where: {
@@ -93,18 +86,11 @@ router.post("/login", (req, res) => {
     // verify user
     const validPassword = dbUserData.checkPassword(req.body.password);
     if (!validPassword) {
-      res.status(400).json({ message: "Incorrect password!" });
-      return;
+      return res.status(400).json({ message: "Incorrect password!" });
     }
 
-    req.session.save(() => {
-      // declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-
-      res.json({ user: dbUserData, message: "You are now logged in!" });
-    });
+    const token = signToken(dbUserData);
+    res.json({ token, user: dbUserData });
   });
 });
 

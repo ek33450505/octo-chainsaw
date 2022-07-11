@@ -63,7 +63,7 @@ export default function Signup() {
                                         <input type="password" className="form-control" name="password" id="password" placeholder="Password" onChange={handleInputChange} value={userFormData.password} required />
                                     </div>
                                     <div className="col-md-6 form-group">
-                                        <input type="text" className="form-control" name="zip-code" id="zip-code" placeholder="Zip Code" onChange={handleInputChange} value={userFormData.zip} required />
+                                        <input type="text" className="form-control" name="zip" id="zip" placeholder="Zip Code" onChange={handleInputChange} value={userFormData.zip} required />
                                     </div>
                                 </div>
                                 <div className="col-md-6 form-group mt-3 mt-md-0">

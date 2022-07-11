@@ -47,7 +47,7 @@ export default function MyAccount() {
                                              <h4>Messages</h4>
                                              <p>Click the button below to be redirected to your messages.
                                              </p>
-                                             <a href="#" className="more-btn"> Here <i className="bx"></i></a>
+                                             <a href="/Message" className="more-btn"> Here <i className="bx"></i></a>
                                          </div>
                                      </div>
                                      <div className="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
