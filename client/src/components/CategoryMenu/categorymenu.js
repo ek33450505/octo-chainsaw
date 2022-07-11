@@ -45,7 +45,7 @@ export default function CategoryMenu() {
                                         <div className="portfolio-wrap">
                                             <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
                                             <div className="portfolio-info">
-                                                <Link to='/api/product' key={element.id}>
+                                                <Link to='/api/product' key={element.id} onClick={() => ('console.log(e.target.innerText)')}>
                                                     <h4>{element.name}</h4>
                                                 </Link>
                                                 <div className="portfolio-links">
