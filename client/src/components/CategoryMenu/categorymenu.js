@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-// const axios = require('axios').default;
+import { Link } from "react-router-dom";
 
 
 export default function CategoryMenu() {
     const [categories, setCategories] = useState([]);
 
-    //on page render, run fetch function
+    //on initial page render, run fetch function
     useEffect(() => {
         fetchCategories();
     }, []);
@@ -45,7 +45,9 @@ export default function CategoryMenu() {
                                         <div className="portfolio-wrap">
                                             <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
                                             <div className="portfolio-info">
-                                                <h4>{element.name}</h4>
+                                                <Link to='/api/product' key={element.id}>
+                                                    <h4>{element.name}</h4>
+                                                </Link>
                                                 <div className="portfolio-links">
                                                     <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
                                                     <a title="More Details"><i className="bx bx-link"></i></a>
