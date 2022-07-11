@@ -14,12 +14,11 @@ export default function CreateProduct() {
     // const [state, setState] = useState('')
     const [price, setPrice] = useState('')
     const [categories, setCategories] = useState([])
-    const category =
 
 
-        useEffect(() => {
-            fetchCategories();
-        }, []);
+    useEffect(() => {
+        fetchCategories();
+    }, []);
 
     //axios get request to fetch all categories
     const fetchCategories = async () => {
