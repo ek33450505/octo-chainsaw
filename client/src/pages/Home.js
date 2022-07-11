@@ -1,5 +1,8 @@
-import CategoryMenu from '../components/CategoryMenu';
-import { Link } from "react-router-dom";
+import CategoryMenu from '../components/CategoryMenu/categorymenu.js';
+import ProductList from '../components/ProductList/productlist';
+
+
+
 
 const Home = () => {
     return (

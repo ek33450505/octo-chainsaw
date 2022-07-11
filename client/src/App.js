@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import React from 'react';
 import AccountPage from './pages/AccountPage'
@@ -6,7 +7,6 @@ import MessagesPage from './pages/MessagesPage'
 
 
 function App() {
-  
   return (
     <div>
         <AccountPage />
