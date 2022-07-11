@@ -40,7 +40,7 @@ User.init({
         allowNull: false,
         validate: {
             len: [5, 5],
-            isNumeric: true
+            // isNumeric: true
         }
     }
 },
