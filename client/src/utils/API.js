@@ -17,3 +17,15 @@ export const loginUser = (userData) => {
     body: JSON.stringify(userData),
   });
 };
+
+//add export newListing function to be used in createlisting.js
+//this
+export const newListing = () => {
+    return fetch('/api/category'), {
+        method: 'POST',
+        headers: {
+
+        },
+        body: JSON.stringify(userData),
+    }
+}

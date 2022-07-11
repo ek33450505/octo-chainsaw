@@ -57,7 +57,7 @@ export default function Login() {
                                     </div>
                                     <div className="col-md-6 form-group mt-3 mt-md-0">
                                     </div>
-                                <div className="text-center"><button disabled={!(userFormData.email && userFormData.password)} type="submit">Submit</button></div>
+                                <div className="text-center"><button enabled={!(userFormData.email && userFormData.password)} type="submit">Submit</button></div>
                             </form>
                         </div>
                     </div>

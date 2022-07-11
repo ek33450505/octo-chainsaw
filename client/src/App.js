@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './pages/Home';
-import LoginPage from './pages/LoginPage';
+import CreateListingPage from './pages/CreateListingPage';
 
 import React, {useEffect} from 'react';
 const axios = require('axios').default;
@@ -14,7 +14,7 @@ function App() {
   // }, [])
   return (
     <div>
-        <LoginPage />
+        <Home />
     </div>
   );
 }
