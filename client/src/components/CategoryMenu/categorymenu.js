@@ -25,8 +25,18 @@ export default function CategoryMenu() {
             })
     };
 
+    const filterResult = async (e) => {
+        // console.log(e.target.innerText);
+        axios.get('/api/product')
+            .then(function(response) {
+                console.log(response.data);
+            })
+    }
+
+
     //map categories to cards
     return (
+       
         <>
 
             <div>
@@ -45,7 +55,7 @@ export default function CategoryMenu() {
                                         <div className="portfolio-wrap">
                                             <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
                                             <div className="portfolio-info">
-                                                <Link to='/product' key={element.id} onClick={(e) => (console.log(e.target.innerText))}>
+                                                <Link to='/product' key={element.id} onClick={(e) => (filterResult(e))}>
                                                     <h4>{element.name}</h4>
                                                 </Link>
                                                 <div className="portfolio-links">
