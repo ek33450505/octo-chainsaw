@@ -23,7 +23,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ["id", "name", "description", "image", "state", "price"],
+        attributes: ["id", "name", "description", "image_url", "state", "price"],
         include: {
           model: User,
           attributes: ["username", "zip"]

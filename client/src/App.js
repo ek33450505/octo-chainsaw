@@ -20,11 +20,11 @@ function App() {
             element={<Home />}
           />
           <Route
-            path='/api/category'
+            path='/category'
             element={<CategoryMenu />}
           />
           <Route
-            path='/api/product'
+            path='/product'
             element={<ProductList />}
           />
         </Routes>
