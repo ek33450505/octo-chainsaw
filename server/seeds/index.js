@@ -56,27 +56,27 @@ Category.bulkCreate(
             description: 'Gear for outdoors'
         },
         {
-            name: 'tools',
+            name: 'Tools',
             description: 'any and all tools'
         },
         {
-            name: 'sports',
+            name: 'Sports',
             description: 'any gear for sports'
         },
         {
-            name: 'tech',
+            name: 'Tech',
             description: 'get geeky'
         },
         {
-            name: 'motorized vehicles',
+            name: 'Motorized Vehicles',
             description: 'any thing that requires a motor to run'
         },
         {
-            name: 'instruments',
+            name: 'Instruments',
             description: 'stuff that make loud noices'
         },
         {
-            name: 'for the kids',
+            name: 'For the Kids',
             description: 'anything for the kids'
         },
 

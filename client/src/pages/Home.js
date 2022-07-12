@@ -1,17 +1,13 @@
 import CategoryMenu from '../components/CategoryMenu/categorymenu.js';
-import Nav from '../components/Nav/nav.js';
-import Hero from '../components/Hero/hero.js';
-import Footer from '../components/Footer/footer.js';
+import ProductList from '../components/ProductList/productlist';
+
 
 
 
 const Home = () => {
     return (
         <div>
-            <Nav />
-            <Hero />
             <CategoryMenu />
-            <Footer />
         </div>
     )
 }

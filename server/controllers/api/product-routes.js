@@ -16,7 +16,13 @@ const withAuth = require('../../utils/auth');
 // get all products
 router.get("/", (req, res) => {
   Product.findAll({
-    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"]
+    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"],
+    include: [
+      {
+        model: Category,
+        attributes: ["name"]
+      }
+    ]
   })
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
