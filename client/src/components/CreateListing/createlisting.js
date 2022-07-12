@@ -32,7 +32,8 @@ export default function CreateListing() {
             category_id: '',
             name: '',
             description: '',
-            price: ''
+            price: '',
+            img: ''
         });
     };
 
@@ -53,20 +54,27 @@ export default function CreateListing() {
                             <form action="forms/contact.php" method="post" role="form" className="php-email-form mt-4" onSubmit={handleFormSubmit}>
                                 <div className="row">
                                     <div className="col-md-6 form-group">
-                                        <input type="text" name="username" className="form-control" id="username" placeholder="Username" onChange={handleInputChange} value={userFormData.category_id} required />
+                                        <input type="text" name="category" className="form-control" id="category" placeholder="Category" onChange={handleInputChange} value={userFormData.category_id} required />
                                     </div>
                                     <div className="col-md-6 form-group">
-                                        <input type="email" name="email" className="form-control" id="email" placeholder="Email" onChange={handleInputChange} value={userFormData.name} required />
+                                        <input type="text" name="name" className="form-control" id="name" placeholder="Name Of Product" onChange={handleInputChange} value={userFormData.name} required />
+                                    </div>
+                                </div>
+                                <div className="row h-100" id="listing_description">
+                                    <div className="col-md-12 form-group">
+                                        <input type="text" className="form-control" name="description" id="description" placeholder="Description Of Product" onChange={handleInputChange} value={userFormData.description} required />
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 form-group">
-                                        <input type="password" className="form-control" name="password" id="password" placeholder="Password" onChange={handleInputChange} value={userFormData.description} required />
+                                        <input type="number" step="0.01" className="form-control" name="price" id="price" placeholder="Price Per Day" onChange={handleInputChange} value={userFormData.price} required />
                                     </div>
                                     <div className="col-md-6 form-group">
-                                        <input type="text" className="form-control" name="zip" id="zip" placeholder="Zip Code" onChange={handleInputChange} value={userFormData.price} required />
+                                        <input type="file" className="form-control" name="img" id="img" placeholder="Upload An Image" onChange={handleInputChange} value={userFormData.img} required />
                                     </div>
                                 </div>
+
+
                                 <div className="col-md-12 form-group mt-3 mt-md-0">
                                     {/* button may need to be fixed, disabled changed to enabled */}
                                     <div className="text-center"><button enabled={!(userFormData.category_id && userFormData.name && userFormData.description && userFormData.price)} type="submit">Submit</button></div>
