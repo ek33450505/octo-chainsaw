@@ -3,12 +3,12 @@ import axios from 'axios';
 // const axios = require('axios').default;
 
 
-export default function CategoryMenu() {
+export default function CategoryMenu({setCurrentCategory}) {
     const [categories, setCategories] = useState([]);
 
-    //on page render, run fetch function
-    useEffect(() => {
-        fetchCategories();
+        //on page render, run fetch function
+        useEffect(() => {
+            fetchCategories();
     }, []);
 
     //axios get request to fetch all categories
@@ -22,8 +22,8 @@ export default function CategoryMenu() {
             .then(function (response) {
                 // console.log(response.data);
                 setCategories(response.data);
-            })
-    };
+         })
+    };      
 
     //map categories to cards
     return (
@@ -39,7 +39,7 @@ export default function CategoryMenu() {
 
                         {categories.map(element => {
                             return (
-                                <div className="row" data-aos="fade-up" data-aos-delay="200">
+                                <div onClick={()=>setCurrentCategory(element.name)} className="row" data-aos="fade-up" data-aos-delay="200">
 
                                     <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div className="portfolio-wrap">

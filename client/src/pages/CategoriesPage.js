@@ -3,12 +3,13 @@ import Nav from '../components/Nav/nav.js';
 import Hero from '../components/Hero/hero.js';
 import Footer from '../components/Footer/footer.js';
 
-const CategoriesPage = () => {
+const CategoriesPage = ({setCurrentCategory}) => {
+
     return (
         <div>
             <Nav />
             <Hero />
-            <CategoryMenu />
+            <CategoryMenu setCurrentCategory = {setCurrentCategory}/>
             <Footer />
         </div>
     )
