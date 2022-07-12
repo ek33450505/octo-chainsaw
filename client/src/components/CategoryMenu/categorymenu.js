@@ -93,12 +93,4 @@ export default function CategoryMenu() {
             </section>
         </div>
     )
-
-    // <h2>Categories</h2>
-    // {categories.map((item) => (
-    //     <button>
-    //         {item}
-    //     </button>
-    // ))}
 }
-
