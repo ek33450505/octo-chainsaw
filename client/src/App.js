@@ -17,13 +17,13 @@ function App() {
 
   return (
     <div>
-        <LoginPage />
-        <CategoriesPage setCurrentCategory = {setCurrentCategory}/>
-        <ProductList currentCategory = {currentCategory}/>
+        {/* <LoginPage /> */}
+        {!currentCategory && <CategoriesPage setCurrentCategory = {setCurrentCategory}/>}
+        {currentCategory && <ProductList currentCategory = {currentCategory}/>}
         <Nav />
-        <Hero />
+        {/* <Hero />
         <Home />
-        <Footer />
+        <Footer /> */}
     </div>
   );
 }

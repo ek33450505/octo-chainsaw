@@ -6406,3 +6406,14 @@ body {
     }
     
     /*# sourceMappingURL=bootstrap-grid.css.map */
+
+    .items-container {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgb(0, 157, 255);
+    }
+
+    .flex-item {
+      width: 30%;
+
+    }

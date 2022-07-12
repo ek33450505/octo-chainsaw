@@ -7,10 +7,10 @@ const CategoriesPage = ({setCurrentCategory}) => {
 
     return (
         <div>
-            <Nav />
-            <Hero />
+            {/* <Nav /> */}
+            {/* <Hero /> */}
             <CategoryMenu setCurrentCategory = {setCurrentCategory}/>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

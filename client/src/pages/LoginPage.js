@@ -7,7 +7,7 @@ const LoginPage = () => {
         <div>
             <Nav />
             <Login />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

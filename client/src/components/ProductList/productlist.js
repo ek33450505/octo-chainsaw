@@ -52,6 +52,7 @@ export default function ProductList({currentCategory}) {
                         {currentProduct===product.id ? (
                             <div>
                                 <h3>{product.description}</h3>
+                                <h3>{product.price}</h3>
                                 <Calendar currentState={product.state}/>
                             </div>
                         ) : null}
