@@ -6,7 +6,7 @@ import { addDays } from 'date-fns'
 
 
 
-export default function Calender() {
+export default function Calendar() {
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState(null)
     function onChangeDateHandler(dates) {
