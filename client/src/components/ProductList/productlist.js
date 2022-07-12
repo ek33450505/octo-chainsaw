@@ -39,17 +39,20 @@ export default function ProductList() {
                             return (
                                 <div className="row" id="ultra-wide" data-aos="fade-up" data-aos-delay="200">
                                     <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                                        <div className="portfolio-wrap">
+                                        {/* link to image goes here */}
+                                        <a href='./'>
+                                            <div className="portfolio-wrap">
                                             {/* image goes here */}
-                                            <img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
+                                                <img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                        <div className="col-lg-8 col-md-6 item text-center">
+                                            {/* listing info goes here */}
+                                            <h2 className="listing-title">Title</h2>
+                                            <p>Description</p>
+                                            <p>$0.00</p>
                                         </div>
-                                    </div>
-                                    <div className="col-lg-8 col-md-6 item text-center">
-                                        {/* listing info goes here */}
-                                        <h2 className="listing-title">Title</h2>
-                                        <p>Description</p>
-                                        <p>$0.00</p>
-                                    </div>
                                 </div>
                             )
                         })}
