@@ -66,6 +66,12 @@ Message.belongsToMany(User, {
     foreignKey: 'message_id'
 });
 
+Message.belongsToMany(User, {
+    through: 'users_message',
+    as: 'username',
+    foerignKey: 'author_id'
+});
+
 
 
 module.exports = { User, Category, Product, Rent, Transaction, Message };

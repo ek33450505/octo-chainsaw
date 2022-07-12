@@ -23,13 +23,16 @@ export default function Message() {
       .then(function (response) {
         // console.log(response.data);
         setMessages(response.data);
-        // console.log(response);
+        console.log(response);
       })
   };
 
   //map categories to cards
   return (
+    
     <div>
+        <section>
+        <h1 data-testid="h1tag">My Messages</h1>
       {messages.map(element => {
         return (
           <Link to='/api/message'>
@@ -38,12 +41,8 @@ export default function Message() {
           </Link>
         )
       })}
-           <section>
-        <h1 data-testid="h1tag">My Messages</h1>
-        <div>
-            <h1>Display Messages Here</h1>
-        </div>
         <form id="reply-message">
+          <h1 data-testid="h1tag">Reply To Message</h1>
           <div>
             <label htmlFor="email">To:</label>
             <input type="email" name="email" />
