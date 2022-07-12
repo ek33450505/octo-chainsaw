@@ -42,7 +42,7 @@ export default function GenerateProductList() {
                                     <div className="portfolio-wrap">
                                         <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
                                         <div className="portfolio-info">
-                                            <h4>{element.name}</h4>
+                                            <h4 className="listing-title">{element.name}</h4>
                                             <div className="portfolio-links">
                                                 <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
                                                 <a title="More Details"><i className="bx bx-link"></i></a>

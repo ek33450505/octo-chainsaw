@@ -75,7 +75,7 @@ body {
     top: 20px;
   }
   #header .header-container {
-    background: #fff;
+    background: #D3D3D3;
   }
   #header.header-scrolled {
     background: #fff;
@@ -86,6 +86,7 @@ body {
     overflow: hidden;
     padding: 16px 30px 12px 30px;
     background: #009970;
+    text-decoration: none;
   }
   #header .logo h1 {
     font-size: 26px;
@@ -119,7 +120,9 @@ body {
       font-size: 24px;
     }
   }
-  
+  #remove-underline {
+    text-decoration: none;
+  }
   /*--------------------------------------------------------------
   # Navigation Menu
   --------------------------------------------------------------*/
@@ -1350,18 +1353,18 @@ body {
   }
 
   #login {
-    margin-top: 10%;
+    margin-top: 2%;
   }
 
   #signup {
-    margin-top: 10%;
+    margin-top: 2%;
   }
 
   .added-border-top {
-    margin-top: 10%;
+    margin-top: 2%;
   }
 
-  #listing_description {
+  .listing-title {
     height: 20%;
   }
   

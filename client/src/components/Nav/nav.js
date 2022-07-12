@@ -11,7 +11,7 @@ export default function Nav() {
                     <div className="header-container d-flex align-items-center justify-content-between">
                         <div className="logo">
                             <Link to='/'>
-                                <h1 className="text-light"><span>rentIt</span></h1>
+                                <h1 className="text-light"  id="remove-underline"><span>rentIt</span></h1>
                             </Link>
                         </div>
                         <nav id="navbar" className="navbar">
