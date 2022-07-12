@@ -22,7 +22,8 @@ import React from "react";
     //         setCategories(response.data);
     //     })
     // }
-export default function GenerateProductList() {
+// export default function GenerateProductList() {
+export default function ProductList() {
     return (
         <>
             <div>
