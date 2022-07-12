@@ -30,31 +30,31 @@ export default function GenerateProductList() {
                     <div className="container">
 
                         <div className="section-title text-center" data-aos="fade-left">
-                            <h2>Products</h2>
+                            {/* name of category goes here */}
+                            <h2>Category-Name</h2>
                         </div>
 
                         {categories.map(element => {
                             return (
-                                <div className="row" data-aos="fade-up" data-aos-delay="200">
+                                <div className="row" id="ultra-wide" data-aos="fade-up" data-aos-delay="200">
                                     <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div className="portfolio-wrap">
-                                            <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
-                                            <div className="portfolio-info">
-                                                <h4>{element.name}</h4>
-                                                <div className="portfolio-links">
-                                                    <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                                                    <a title="More Details"><i className="bx bx-link"></i></a>
-                                                </div>
-                                            </div>
+                                            {/* image goes here */}
+                                            <img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
                                         </div>
+                                    </div>
+                                    <div className="col-lg-8 col-md-6 item text-center">
+                                        {/* listing info goes here */}
+                                        <h2 className="listing-title">Title</h2>
+                                        <p>Description</p>
+                                        <p>$0.00</p>
                                     </div>
                                 </div>
                             )
                         })}
-
                     </div>
                 </section>
             </div>
         </>
     )
-}
+};
