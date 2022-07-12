@@ -25,11 +25,11 @@ function App() {
                 element={<Home />}
               />
               <Route
-                path='/signup'
+                exact path='/signup'
                 element={<SignupPage />}
               />
               <Route
-                path='/login'
+                exact path='/login'
                 element={<LoginPage />}
               />
               <Route

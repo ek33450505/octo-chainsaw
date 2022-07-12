@@ -15,10 +15,10 @@ export default function CategoryMenu() {
 
                     <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-app" id="col-height-mod">
                             <a href="./category/outdoor-gear">
                                 <div className="portfolio-wrap">
-                                    <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/outdoor-gear.jpg?raw=true' className="img-fluid" alt=""></img>
+                                    <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/outdoor-gear.jpeg?raw=true' className="img-fluid categories-img" alt=""></img>
                                     <div className="portfolio-info">
                                         <h4>Outdoor Gear</h4>
                                         <div className="portfolio-links">
@@ -30,7 +30,7 @@ export default function CategoryMenu() {
                             </a>
                         </div>
                         
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-web" id="col-height-mod">
                             <a href="./category/tools">
                                 <div className="portfolio-wrap">
                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/tools.jpg?raw=true' className="img-fluid" alt="" />
@@ -44,7 +44,7 @@ export default function CategoryMenu() {
                             </a>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-app" id="col-height-mod">
                             <a href="./category/sports-equipment">
                                 <div className="portfolio-wrap">
                                     <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/sports-equipment.jpg?raw=true' className="img-fluid" alt="" />
@@ -58,7 +58,7 @@ export default function CategoryMenu() {
                             </a>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-card" id="col-height-mod">
                             <a href="./category/tech">
                                 <div className="portfolio-wrap">
                                     <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/tech.jpg?raw=true' className="img-fluid" alt="" />
@@ -72,7 +72,7 @@ export default function CategoryMenu() {
                             </a>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-web" id="col-height-mod">
                             <a href="./category/motorized-vehicles">
                                 <div className="portfolio-wrap">
                                     <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/motorized-vehicles.jpg?raw=true' className="img-fluid" alt="" />
@@ -86,7 +86,7 @@ export default function CategoryMenu() {
                             </a>
                         </div>
 
-                        <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div className="col-lg-4 col-md-6 portfolio-item filter-app" id="col-height-mod">
                             <a href="./category/instruments">
                                 <div className="portfolio-wrap">
                                     <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/instruments.jpg?raw=true' className="img-fluid" alt="" />

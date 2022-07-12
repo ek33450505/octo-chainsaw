@@ -1367,6 +1367,11 @@ body {
   .listing-title {
     height: 20%;
   }
+
+  .portfolio-wrap img{
+    height: 250px;
+    width: 450px;
+  }
   
   /*!
    * Bootstrap Grid v5.1.3 (https://getbootstrap.com/)
@@ -1523,6 +1528,10 @@ body {
     .row-cols-6 > * {
       flex: 0 0 auto;
       width: 16.6666666667%;
+    }
+
+    #col-height-mod {
+        height: 250px;
     }
     
     .col-auto {
