@@ -26,6 +26,14 @@ Message.init(
                 key: 'id'
             }
         },
+        // username: {
+        //   type: DataTypes.STRING,
+        //   awwlowNull: false,
+        //   references: {
+        //     model: 'user',
+        //     key: 'author_id'
+        //   }
+        // },
         recipient_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

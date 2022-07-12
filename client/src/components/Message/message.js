@@ -23,6 +23,7 @@ export default function Message() {
       .then(function (response) {
         // console.log(response.data);
         setMessages(response.data);
+        // console.log(response);
       })
   };
 

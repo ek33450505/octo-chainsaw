@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Message } = require('../../models');
+const { Message, User, Product } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // Get all messages 
@@ -11,8 +11,19 @@ router.get('/', (req, res) => {
         'author_id',
         'recipient_id',
         'product_id'
-      ]
-    })
+      ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ["username"],
+      //     include: {
+      //       as: 'message',
+      //       model: Message,
+      //       attributes: ["username"]
+      //     }
+      //   }
+      // ],
+  })
       .then(dbMessagetData => res.json(dbMessagetData))
       .catch(err => {
         console.log(err);
