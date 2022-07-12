@@ -24,7 +24,7 @@ export const newListing = () => {
     return fetch('/api/category'), {
         method: 'POST',
         headers: {
-
+            
         },
         body: JSON.stringify(userData),
     }
