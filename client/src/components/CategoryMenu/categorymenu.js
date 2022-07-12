@@ -52,9 +52,11 @@ export default function CategoryMenu() {
                             <h2>Categories</h2>
                         </div>
 
-                        {categories.map(element => {
-                            return (
-                                <div className="row" data-aos="fade-up" data-aos-delay="200">
+                        <div className="row" data-aos="fade-up" data-aos-delay="200">
+
+                            {categories.map(element => {
+                                return (
+
 
                                     <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                         <div className="portfolio-wrap">
@@ -70,10 +72,9 @@ export default function CategoryMenu() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        })}
-
+                                )
+                            })}
+                        </div>
                     </div>
                 </section>
             </div>
