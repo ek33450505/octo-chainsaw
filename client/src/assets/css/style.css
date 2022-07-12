@@ -645,6 +645,11 @@ body {
   /*--------------------------------------------------------------
   # Portfolio
   --------------------------------------------------------------*/
+
+  .portfolio-wrap img{
+    height: 250px;
+    width: 450px;
+  }
   .portfolio .portfolio-item {
     margin-bottom: 30px;
   }
@@ -1412,6 +1417,8 @@ body {
       --bs-body-color: #212529;
       --bs-body-bg: #fff;
     }
+
+ 
     
     .container,
     .container-fluid,
