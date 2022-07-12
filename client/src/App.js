@@ -9,6 +9,7 @@ import Login from '../src/components/Login/login.js';
 import ProductList from '../src/components/ProductList/productlist.js';
 import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
 import MyAccount from '../src/components/MyAccount/myaccount.js';
+import Message from '../src/components/Message/message.js';
 
 
 
@@ -48,6 +49,10 @@ function App() {
       <Route
         path='/productList'
         element={<ProductList />}
+      />
+      <Route
+        path='/message'
+        element={<Message />}
       />
     </Routes>
     <Footer />

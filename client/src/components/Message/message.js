@@ -1,7 +1,7 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from 'axios';
-import Auth from '../../utils/auth';
+// import Auth from '../../utils/auth';
 
 
 export default function Message() {
@@ -32,18 +32,15 @@ export default function Message() {
       {messages.map(element => {
         return (
           <Link to='/api/message'>
-            <h2>{element.name}</h2>
+            <h2>{element.author_id}</h2>
+            <h2>{element.message_text}</h2>
           </Link>
         )
       })}
-    </div>
-  )}
-  
-    return (
-      <section>
+           <section>
         <h1 data-testid="h1tag">My Messages</h1>
         <div>
-            <container>Display Messages Here</container>
+            <h1>Display Messages Here</h1>
         </div>
         <form id="reply-message">
           <div>
@@ -58,3 +55,6 @@ export default function Message() {
         </form>
       </section>
     );
+    </div>
+  )}
+  
