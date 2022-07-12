@@ -1,4 +1,4 @@
-import ProductList from '../components/ProductList/productlist.js';
+import ProductList from '../components/ProductList/productlist';
 import Nav from '../components/Nav/nav.js';
 import Hero from '../components/Hero/hero.js';
 import Footer from '../components/Footer/footer.js';
