@@ -38,18 +38,21 @@ export default function GenerateProductList() {
                     {products.map(element => {
                         return(
                             <div className="row" data-aos="fade-up" data-aos-delay="200">
-                                <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                                    <div className="portfolio-wrap">
-                                        <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
-                                        <div className="portfolio-info">
-                                            <h4 className="listing-title">{element.name}</h4>
-                                            <div className="portfolio-links">
-                                                <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                                                <a title="More Details"><i className="bx bx-link"></i></a>
+                                {/* add route to post id */}
+                                <Link to="">
+                                    <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                                        <div className="portfolio-wrap">
+                                            <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
+                                            <div className="portfolio-info">
+                                                <h4 className="listing-title">{element.name}</h4>
+                                                <div className="portfolio-links">
+                                                    <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
+                                                    <a title="More Details"><i className="bx bx-link"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                         )
                     })}

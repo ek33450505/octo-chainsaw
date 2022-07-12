@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function CategoryMenu() {
-    //future: will query our database for the categories
-    const categories = ['Outdoor Gear', 'Tools', 'Sports Equipment', 'Tech', 'Motorized Vehicles', 'Instruments', 'For Kids'];
 
     return (
         <div>
