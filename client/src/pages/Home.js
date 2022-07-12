@@ -1,8 +1,5 @@
 import CategoryMenu from '../components/CategoryMenu/categorymenu.js';
 
-
-
-
 const Home = () => {
     return (
         <div>

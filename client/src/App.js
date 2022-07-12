@@ -1,29 +1,54 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import LoginPage from './pages/LoginPage';
-import CategoriesPage from './pages/CategoriesPage';
-import React, {useEffect} from 'react';
-const axios = require('axios');
-
-
-// send a POST request
 import Nav from '../src/components/Nav/nav.js';
-import Footer from '../src/components/Footer/footer.js';
 import Hero from '../src/components/Hero/hero.js';
-
+import Footer from '../src/components/Footer/footer.js';
+import Signup from '../src/components/Signup/signup.js';
+import Login from '../src/components/Login/login.js';
+import ProductList from '../src/components/ProductList/productlist.js';
+import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
+import MyAccount from '../src/components/MyAccount/myaccount.js';
 
 
 function App() {
-  
+ 
   return (
-    <div>
-        <LoginPage />
-        <CategoriesPage/>
-        <Nav />
-        <Hero />
-        <Home />
-        <Footer />
-    </div>
+    <Router>
+    <Nav />
+    <Hero />
+    <Routes>
+      <Route
+        path='/'
+        element={<Home />}
+      />
+      <Route
+        path='/signup'
+        element={<Signup />}
+      />
+      <Route
+        path='/login'
+        element={<Login />}
+      />
+      <Route
+        path='/'
+        element={<CategoryMenu />}
+      />
+      <Route
+        path='/myaccount'
+        element={<MyAccount />}
+      />
+      <Route
+        path='/createListing'
+        element={<Home />}
+      />
+      <Route
+        path='/productlist'
+        element={<ProductList />}
+      />
+    </Routes>
+    <Footer />
+</Router>
   );
 }
 

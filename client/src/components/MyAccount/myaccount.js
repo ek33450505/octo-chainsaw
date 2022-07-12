@@ -1,6 +1,6 @@
 import React from "react";
 
-export function MyAccount() {
+export default function MyAccount() {
     return (
         <div>
             <section id="my-account" className="my-account">

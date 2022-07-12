@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ProductList() {
+export default function ProductList() {
     return (
         <div>
             <section id="portfolio" className="portfolio">
