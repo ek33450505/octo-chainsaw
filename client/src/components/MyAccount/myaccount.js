@@ -4,7 +4,7 @@ import Auth from '../../utils/auth';
 
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
-    return fetch('/api/users/me', {
+    return fetch('/api/user/me', {
       headers: {
         'Content-Type': 'application/json',
         authorization: `Bearer ${token}`,
@@ -44,25 +44,25 @@ export default function MyAccount() {
     }, [userDataLength]);
 
     // map user info to page
-    return (
-        <div>
-            {user.map(element => {
-                return (
-                    <>
-                        <Link to='/api/user/me' key={element.id}>
-                            <h4 key={element.id}>{element.name}</h4>
-                        </Link>
-                        <p>{ element.message }</p>
-                        {/* <p>{ element.state }</p>
-                        <p>{ element.price }</p> */}
-                    </>
-                )
-            })}
-        </div>
-    )}
+    // return (
+    //     <div>
+    //         {user.map(element => {
+    //             return (
+    //                 <>
+    //                     <Link to='/api/user/me' key={element.id}>
+    //                         <h4 key={element.id}>{element.name}</h4>
+    //                     </Link>
+    //                     <p>{ element.message }</p>
+    //                     {/* <p>{ element.state }</p>
+    //                     <p>{ element.price }</p> */}
+    //                 </>
+    //             )
+    //         })}
+    //     </div>
+    // )}
 
     return (
-        <>
+        // <>
             <div>
              <section id="my-account" className="my-account">
                <div className="container">
@@ -108,5 +108,5 @@ export default function MyAccount() {
                  </div>
              </section>
             </div>
-        </>
-    )
+        // </>
+    )}

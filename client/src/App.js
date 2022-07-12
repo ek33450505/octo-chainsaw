@@ -6,7 +6,7 @@ import Hero from '../src/components/Hero/hero.js';
 import Footer from '../src/components/Footer/footer.js';
 import Signup from '../src/components/Signup/signup.js';
 import Login from '../src/components/Login/login.js';
-import ProductList from '../src/components/ProductList/productList.js';
+import ProductList from '../src/components/ProductList/productlist.js';
 import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
 import MyAccount from '../src/components/MyAccount/myaccount.js';
 
