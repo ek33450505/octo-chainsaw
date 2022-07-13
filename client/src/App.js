@@ -11,6 +11,7 @@ import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
 import MyAccount from '../src/components/MyAccount/myaccount.js';
 import Contact from '../src/components/Contact/contact.js';
 import CreateProduct from '../src/components/CreateProduct/CreateProduct'
+import MyListings from '../src/components/MyListings/myListings';
 
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
         <Route
           path='/myaccount'
           element={<MyAccount />}
+        />
+        <Route
+          path='/mylistings'
+          element={<MyListings />}
         />
         <Route
           path='/createproduct'
