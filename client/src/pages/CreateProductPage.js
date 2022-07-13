@@ -4,7 +4,7 @@ import CreateProduct from '../components/CreateProduct/CreateProduct.js';
 
 
 
-const CreateListingPage = () => {
+const CreateProductPage = () => {
 
 
     return (
@@ -17,4 +17,4 @@ const CreateListingPage = () => {
     )
 }
 
-export default CreateListingPage;
+export default CreateProductPage;
