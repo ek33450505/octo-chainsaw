@@ -15,9 +15,6 @@ import MyListings from '../src/components/MyListings/myListings.js';
 
 
 
-
-
-
 function App() {
 
   return (

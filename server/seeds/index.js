@@ -75,11 +75,6 @@ Category.bulkCreate(
             name: 'Instruments',
             description: 'stuff that make loud noices'
         },
-        {
-            name: 'For the Kids',
-            description: 'anything for the kids'
-        },
-
     ])
 
 Product.bulkCreate([
@@ -195,24 +190,7 @@ Product.bulkCreate([
         price: '1.00'
     }
     ,
-    {
-        category_id: 7,
-        user_id: 2,
-        name: 'new born clothes',
-        description: 'a weeks worth of clothes for your newborn baby ',
-        img: 'put url here',
-        state: 'available',
-        price: '5.00'
-    },
-    {
-        category_id: 7,
-        user_id: 4,
-        name: 'baby carriage',
-        description: 'a carriage to put your baby in',
-        img: 'put url here',
-        state: 'available',
-        price: '10.00'
-    }
+    
 
 
 
