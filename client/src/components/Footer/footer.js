@@ -24,7 +24,7 @@ export default function Footer() {
                                         Categories
                                     </Link></li>
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/product' className="nav-link scrollto">
-                                        Product
+                                        Products
                                     </Link></li>
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/contact' className="nav-link scrollto">
                                         Contact
