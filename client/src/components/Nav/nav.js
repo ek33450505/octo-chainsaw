@@ -35,6 +35,11 @@ export default function Nav() {
                                             </Link>
                                         </li>
                                         <li>
+                                            <Link to='contact' className="nav-link scrollto">
+                                                Contact
+                                            </Link>
+                                        </li>
+                                        <li>
                                             <Link to='/' className="getstarted scrollto" onClick={Auth.logout}>
                                                 Logout
                                             </Link>
