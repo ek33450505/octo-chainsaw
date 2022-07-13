@@ -11,7 +11,7 @@ export default function Footer() {
                         <div className="row">
 
                             <div className="col-lg-3 col-md-6 footer-contact">
-                                <h3>rentIt</h3>
+                                <h3>RentIt</h3>
                             </div>
 
                             <div className="col-lg-2 col-md-6 footer-links">
@@ -23,8 +23,8 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto">
                                         Categories
                                     </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to='/product' className="nav-link scrollto">
-                                        Product
+                                    <li><i className="bx bx-chevron-right"></i> <Link to='/productlist' className="nav-link scrollto">
+                                        Products
                                     </Link></li>
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/contact' className="nav-link scrollto">
                                         Contact
@@ -56,7 +56,7 @@ export default function Footer() {
                 <div className="container d-md-flex py-4">
                     <div className="me-md-auto text-center text-md-start">
                         <div className="copyright">
-                            &copy; Copyright <strong><span>rentIt</span></strong>. All Rights Reserved
+                            &copy; Copyright <strong><span>RentIt</span></strong>. All Rights Reserved
                         </div>
 
                     </div>

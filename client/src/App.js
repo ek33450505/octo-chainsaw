@@ -13,9 +13,6 @@ import Contact from '../src/components/Contact/contact.js';
 import CreateProduct from '../src/components/CreateProduct/CreateProduct'
 
 
-
-
-
 function App() {
 
   return (
