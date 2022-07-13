@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function ProductList() {
-
-  
     return (
         <div>
             <section id="portfolio" className="portfolio">
