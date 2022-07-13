@@ -1,3 +1,4 @@
+
 export default function CategoryMenu() {
     //future: will query our database for the categories
     const categories = ['Outdoor Gear', 'Tools', 'Sports Equipment', 'Tech', 'Motorized Vehicles', 'Instruments', 'For Kids'];
@@ -27,11 +28,11 @@ export default function CategoryMenu() {
                                 </div>
                             </a>
                         </div>
-                        
+
                         <div className="col-lg-4 col-md-6 portfolio-item filter-web" id="col-height-mod">
                             <a href="./category/tools">
                                 <div className="portfolio-wrap">
-                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/tools.jpg?raw=true' className="img-fluid" alt="" />
+                                    <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/tools.jpg?raw=true' className="img-fluid" alt="" />
                                     <div className="portfolio-info">
                                         <h4>Tools</h4>
                                         <div className="portfolio-links">
@@ -55,7 +56,6 @@ export default function CategoryMenu() {
                                 </div>
                             </a>
                         </div>
-
                         <div className="col-lg-4 col-md-6 portfolio-item filter-card" id="col-height-mod">
                             <a href="./category/tech">
                                 <div className="portfolio-wrap">
@@ -69,7 +69,6 @@ export default function CategoryMenu() {
                                 </div>
                             </a>
                         </div>
-
                         <div className="col-lg-4 col-md-6 portfolio-item filter-web" id="col-height-mod">
                             <a href="./category/motorized-vehicles">
                                 <div className="portfolio-wrap">
@@ -83,7 +82,6 @@ export default function CategoryMenu() {
                                 </div>
                             </a>
                         </div>
-
                         <div className="col-lg-4 col-md-6 portfolio-item filter-app" id="col-height-mod">
                             <a href="./category/instruments">
                                 <div className="portfolio-wrap">
