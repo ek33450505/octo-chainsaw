@@ -10,7 +10,11 @@ import ProductList from '../src/components/ProductList/productlist.js';
 import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
 import MyAccount from '../src/components/MyAccount/myaccount.js';
 import Contact from '../src/components/Contact/contact.js';
+<<<<<<< HEAD
 import CreateProduct from '../src/components/CreateProduct/CreateProduct'
+=======
+import CreateProduct from './components/CreateProduct/CreateProduct';
+>>>>>>> 753bb9b75816c0c65b79f267a0df0c08bf9c2976
 
 
 
