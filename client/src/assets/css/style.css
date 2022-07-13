@@ -473,6 +473,10 @@ section {
   background-color: #f6f6f7;
 }
 
+.section-bg-listings {
+  background-color: #009970;
+}
+
 .section-title {
   padding-bottom: 30px;
 }
