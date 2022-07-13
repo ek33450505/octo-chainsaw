@@ -5,10 +5,12 @@ import React, {useState} from 'react';
 const Home = () => {
     const [currentCategory, setCurrentCategory] = useState("")
 
+    const handleCategoryChange = (category) => setCurrentCategory(category)
+    
     return (
         <div>
             {/* <CategoryMenu /> */}
-            {!currentCategory && <CategoryMenu setCurrentCategory = {setCurrentCategory}/>}
+            {!currentCategory && <CategoryMenu handleCategoryChange = {handleCategoryChange}/>}
             {currentCategory && <ProductList currentCategory = {currentCategory}/>}
         </div>
     )

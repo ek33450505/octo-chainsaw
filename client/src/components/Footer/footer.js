@@ -23,7 +23,7 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto">
                                         Categories
                                     </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to='/product' className="nav-link scrollto">
+                                    <li><i className="bx bx-chevron-right"></i> <Link to='/productlist' className="nav-link scrollto">
                                         Products
                                     </Link></li>
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/contact' className="nav-link scrollto">

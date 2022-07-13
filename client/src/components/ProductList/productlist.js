@@ -8,7 +8,6 @@ export default function ProductList({currentCategory}) {
     const [currentProduct, setCurrentProduct] = useState("");
         //on page render, run fetch function
 
-        console(currentCategory);
         useEffect(() => {
             fetchProducts();
     }, []);
@@ -36,30 +35,36 @@ export default function ProductList({currentCategory}) {
                         <h2>Products</h2>
                     </div>
                     {/* <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200"> */}
-                    {products.filter(p=>currentCategory===p.category.name).map(product=>(
-                        // <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                        //     <div className="portfolio-wrap">
-                        //         {/* <img src={product.image_url} className="img-fluid" alt=""></img> */}
-                        //         <div className="portfolio-info">
-                        //             <h4>{product.name}</h4>
-                        //             <div className="portfolio-links">
-                        //                 <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                        //                 <a title="More Details"><i className="bx bx-link"></i></a>
-                        //             </div>
-                        //         </div>
-                        //     </div>
-                        // </div>
-                        <div>
-                        <h4 onClick={()=> setCurrentProduct(product.id)}>{product.name}</h4> 
-                        {currentProduct===product.id ? (
+                    {currentCategory?(
+                        products.filter(p=>currentCategory===p.category.name).map(product=>(
                             <div>
-                                <h3>{product.description}</h3>
-                                <h3>{product.price}</h3>
-                                <Calendar currentState={product.state}/>
+                            <h4 onClick={()=> setCurrentProduct(product.id)}>{product.name}</h4> 
+                            {currentProduct===product.id ? (
+                                <div>
+                                    <h3>{product.description}</h3>
+                                    <h3>{product.price}</h3>
+                                    <Calendar currentState={product.state}/>
+                                </div>
+                            ) : null}
                             </div>
-                        ) : null}
-                        </div>
-                    ))}
+                        ))
+                    ):(
+                        products.map(product=>(
+                            <div>
+                            <h4 onClick={()=> setCurrentProduct(product.id)}>{product.name}</h4> 
+                            {currentProduct===product.id ? (
+                                <div>
+                                    <h3>{product.description}</h3>
+                                    <h3>{product.price}</h3>
+                                    <Calendar currentState={product.state}/>
+                                </div>
+                            ) : null}
+                            </div>
+                        ))
+                    )
+
+                        
+                    }
 
                     {/* </div> */}
 

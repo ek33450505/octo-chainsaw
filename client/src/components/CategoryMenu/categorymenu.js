@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // const axios = require('axios').default;
 
-export default function CategoryMenu(setCurrentCategory) {
+export default function CategoryMenu({handleCategoryChange}) {
     const [categories, setCategories] = useState([]);
 
         //on page render, run fetch function
@@ -41,7 +41,7 @@ export default function CategoryMenu(setCurrentCategory) {
                         <div className="items-container"> 
                             {categories.map(element => {
                                 return (
-                                    <div onClick={()=> setCurrentCategory(element.name)} className="row portfolio-container flex-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div onClick={()=> handleCategoryChange(element.name)} className="row portfolio-container flex-item" data-aos="fade-up" data-aos-delay="200">
 
                                         <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                             <div className="portfolio-wrap">
