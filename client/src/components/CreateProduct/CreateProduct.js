@@ -1,19 +1,37 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios'
-
-
+import Auth from '../../utils/auth';
 
 export default function CreateProduct() {
-    const user = 1;
     const [category_id, setCategoryId] = useState()
-    const [user_id, setUserId] = useState()
+    const [user_id, setUserId] = useState({});
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [productImage, setProductImage] = useState('')
-    const [fileName, setFileName] = useState('Choose File')
     const [state, setState] = useState('')
     const [price, setPrice] = useState('')
     const [categories, setCategories] = useState([])
+
+
+    useEffect(() => {
+        const getUserData = async () => {
+            try {
+                const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+                if (!token) {
+                    return false;
+                }
+
+                const user = Auth.getProfile()
+
+                setUserId(user.data.id);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        getUserData();
+    }, []);
 
 
     useEffect(() => {
@@ -29,7 +47,6 @@ export default function CreateProduct() {
         })
             //update the state with category data
             .then(function (response) {
-                // console.log(response.data);
                 setCategories(response.data);
             })
     };
@@ -39,7 +56,7 @@ export default function CreateProduct() {
 
         const formData = new FormData();
         formData.append('category_id', category_id)
-        formData.append('user_id', 1)
+        formData.append('user_id', user_id)
         formData.append('name', name)
         formData.append('description', description)
         formData.append('productImage', productImage)
@@ -79,14 +96,17 @@ export default function CreateProduct() {
                                     <div className="col-md-6 form-group">
                                         <label className='form-label' htmlFor='category_id'>Please Select a Category/</label>
                                         <select
-                                        className='form-control'
-                                        id='category_id'
-                                        onChange={(e) => setCategoryId(parseInt(e.target.value))}
-                                    >
-                                        {categories.map(element => {
+                                            defaultValue='Please Select a Category'
+                                            className='form-control'
+                                            id='category_id'
+                                            onBlur={(e) => setCategoryId(parseInt(e.target.value))}
 
-                                            return (<option key={element.id} value={element.id}>{element.name}</option>)
-                                        })}
+                                        >
+                                            <option disabled>Please Select a Category</option>
+                                            {categories.map(element => {
+
+                                                return (<option key={element.id} value={element.id}>{element.name}</option>)
+                                            })}
                                         </select>
                                     </div>
                                     <div className="col-md-6 form-group">
@@ -95,6 +115,7 @@ export default function CreateProduct() {
                                             type='text'
                                             className='form-control'
                                             id='name'
+                                            required
 
                                             onChange={(e) => setName(e.target.value)}
                                         />
@@ -125,62 +146,51 @@ export default function CreateProduct() {
 
                                             onChange={(e) => {
                                                 setProductImage(e.target.files[0]);
-                                                setFileName(e.target.files[0].name)
                                             }}
                                         ></input>
                                     </div>
+
+                                </div>
+                                <div className="row">
+
                                     <div className="col-md-6 form-group">
-                                        <label htmlFor='user_id'>User id/</label>
-                                        <select
+                                        <label className='fomr-label' htmlFor='price'>Price Per Day</label>
+                                        <input
+                                            type='number'
+                                            min='1'
+                                            max='1000'
+                                            step='.50'
                                             className='form-control'
-                                            id='user_id'
-                                            onChange={(e) => setUserId(e.target.value)}
+                                            id='price'
+
+                                            onChange={(e) => setPrice(e.target.value)}
                                         >
-                                            <option selected value={user}>User 1</option>
-                                            <option value='2'>User 2</option>
-                                            <option value='3'>User 3</option>
-                                            <option value='4'>User 4</option>
-                                            <option value='5'>User 5</option>
-                                            <option value='6'>User 6</option>
+                                        </input>
+                                    </div>
+                                    <div className="col-md-6 form-group">
+                                        <label htmlFor='state' id="add-margin-top">Product Availability</label>
+                                        <select
+
+                                            defaultValue='Choose your Product Availability'
+                                            id='state'
+                                            onBlur={(e) => setState(e.target.value)}
+                                            required
+                                        >
+                                            <option disabled>Choose your Product Availability</option>
+                                            <option value='available'>Available</option>
+                                            <option value='not_available'>Not Available</option>
+                                            <option value='renting'> Renting</option>
+                                            <option value='requested'> Requested</option>
                                         </select>
                                     </div>
                                 </div>
-                            <div className="row">
-                                
-                                <div className="col-md-6 form-group">
-                                    <label className='fomr-label' htmlFor='price'>Price Per Day</label>
-                                    <input
-                                        type='number'
-                                        min='1'
-                                        max='1000'
-                                        step='.50'
-                                        className='form-control'
-                                        id='price'
+                                <div className='row center-button'>
+                                    <div className="col-md-6 form-group">
+                                        <button type='button' className='rentit-button' onClick={createProduct}>rentIt    <i className="bi bi-arrow-right"></i></button>
+                                    </div>
+                                </div>
 
-                                        onChange={(e) => setPrice(e.target.value)}
-                                    >
-                                    </input>
-                                </div>
-                                <div className="col-md-6 form-group">
-                                    <label htmlFor='state' id="add-margin-top">Product Availability</label>
-                                    <select
-                                        id='state'
-                                        onChange={(e) => setState(e.target.value)}
-                                    >
-                                        <option value='available'>Available</option>
-                                        <option value='not_available'>Not Available</option>
-                                        <option value='renting'> Renting</option>
-                                        <option value='requested'> Requested</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div className='row center-button'>
-                                <div className="col-md-6 form-group">
-                                    <button type='button' className='rentit-button' onClick={createProduct}>rentIt    <i class="bi bi-arrow-right"></i></button>
-                                </div>
-                            </div>
-
-                        </form>
+                            </form>
                         </div>
                     </div>
                 </div>
