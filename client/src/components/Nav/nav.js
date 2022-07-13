@@ -23,7 +23,7 @@ export default function Nav() {
                                 {Auth.loggedIn() ? (
                                     <>
                                         <li>
-                                            <Link to='/' className='nav-link scrollto'>
+                                            <Link to='createListing' className='nav-link scrollto'>
                                                 Create Listing
                                             </Link>
                                         </li>
@@ -55,6 +55,7 @@ export default function Nav() {
                                                 Login
                                             </Link>
                                         </li>
+
                                     </>
                                 )}
                             </ul>
