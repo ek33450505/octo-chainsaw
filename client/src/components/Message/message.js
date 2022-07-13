@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-// import Auth from '../../utils/auth';
-
 
 export default function Message() {
   const [messages, setMessages] = useState([]);
@@ -29,14 +27,14 @@ export default function Message() {
 
   //map categories to cards
   return (
-    
+
     <div>
         <section>
         <h1 data-testid="h1tag">My Messages</h1>
       {messages.map(element => {
         return (
           <Link to='/api/message'>
-            <h2>{element.author_id}</h2>
+            <h2>{element.username}</h2>
             <h2>{element.message_text}</h2>
           </Link>
         )
@@ -57,4 +55,3 @@ export default function Message() {
     );
     </div>
   )}
-  

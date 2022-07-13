@@ -62,14 +62,14 @@ Message.hasOne(Product, {
 
 Message.belongsToMany(User, {
     through: 'users_message',
-    as: 'message',
+    as: 'user',
     foreignKey: 'message_id'
 });
 
-Message.belongsToMany(User, {
+User.belongsToMany(Message, {
     through: 'users_message',
-    as: 'username',
-    foerignKey: 'author_id'
+    as: 'message',
+    foreignKey: { name: 'user_id', unique: false }
 });
 
 

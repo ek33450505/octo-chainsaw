@@ -2,7 +2,8 @@ const User = require('../models/User')
 const Transaction = require('../models/Transaction')
 const Rent = require('../models/Rent');
 const Product = require('../models/Product');
-const Category = require('../models/Category')
+const Category = require('../models/Category');
+const Message = require('../models/Message');
 
 User.bulkCreate(
     [{
@@ -213,8 +214,13 @@ Product.bulkCreate([
         state: 'available',
         price: '10.00'
     }
-
-
-
-
 ])
+
+    Message.bulkCreate([ 
+    {
+        message_text: 'Cool Post',
+        author_id: 2,
+        recipient_id: 1,
+        product_id: 1
+    }
+    ])
