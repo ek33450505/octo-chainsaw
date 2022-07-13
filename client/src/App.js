@@ -16,48 +16,50 @@ import Contact from '../src/components/Contact/contact.js';
 
 
 function App() {
- 
+
   return (
     <Router>
-    <Nav />
-    <Hero />
-    <Routes>
-      <Route
-        path='/'
-        element={<Home />}
-      />
-      <Route
-        path='/signup'
-        element={<Signup />}
-      />
-      <Route
-        path='/login'
-        element={<Login />}
-      />
-      <Route
-        path='/'
-        element={<CategoryMenu />}
-      />
-      <Route
-        path='/myaccount'
-        element={<MyAccount />}
-      />
-      <Route
-        path='/createListing'
-        element={<Home />}
-      />
-      <Route
-        path='/productlist'
-        element={<ProductList />}
-      />
-      <Route
-        path='/contact'
-        element={<Contact />}
-      />
-    </Routes>
-    <Footer />
-</Router>
+      <Nav />
+      <Hero />
+      <Routes>
+        <Route
+          path='/'
+          element={<Home />}
+        />
+        <Route
+          path='/signup'
+          element={<Signup />}
+        />
+        <Route
+          path='/login'
+          element={<Login />}
+        />
+        <Route
+          path='/'
+          element={<CategoryMenu />}
+        />
+        <Route
+          path='/myaccount'
+          element={<MyAccount />}
+        />
+        <Route
+          path='/createListing'
+          element={<Home />}
+        />
+        <Route
+          path='/productlist'
+          element={<ProductList />}
+        />
+        <Route
+          path='/contact'
+          element={<Contact />}
+        />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
 export default App;
+
+
