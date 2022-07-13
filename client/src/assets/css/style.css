@@ -91,6 +91,10 @@ h6 {
   text-decoration: none;
 }
 
+#header-img {
+  margin: 0;
+}
+
 #header .logo h1 {
   font-size: 26px;
   padding: 0;
