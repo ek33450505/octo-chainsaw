@@ -10,7 +10,9 @@ import ProductList from '../src/components/ProductList/productlist.js';
 import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
 import MyAccount from '../src/components/MyAccount/myaccount.js';
 import Contact from '../src/components/Contact/contact.js';
-import CreateProduct from '../src/components/CreateProduct/CreateProduct'
+import CreateProduct from '../src/components/CreateProduct/CreateProduct.js'
+import MyListings from '../src/components/MyListings/myListings.js';
+
 
 
 
@@ -42,6 +44,10 @@ function App() {
         <Route
           path='/myaccount'
           element={<MyAccount />}
+        />
+        <Route
+          path='/myListings'
+          element={<MyListings />}
         />
         <Route
           path='/createproduct'

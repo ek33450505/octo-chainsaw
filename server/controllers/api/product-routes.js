@@ -16,7 +16,7 @@ const withAuth = require('../../utils/auth');
 // get all products
 router.get("/", (req, res) => {
   Product.findAll({
-    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"],
+    attributes: ["id", "user_id", 'category_id', "name", "description", "image_url", "state", "price"],
     include: [
       {
         model: Category,
@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ["id", "name", "description", "image_url", "state", "price"],
+    attributes: ["id", "user_id", "name", "description", "image_url", "state", "price"],
     include: [
       {
         model: User,
@@ -67,7 +67,7 @@ router.post("/", upload.single('productImage'), (req, res) => {
     user_id: req.body.user_id,  // change to session id eventually
     name: req.body.name,
     description: req.body.description,
-    image_url: req.file.path,
+    // image_url: req.file.path,
     state: req.body.state,
     price: req.body.price
   })

@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 
 export default function MyAccount() {
     return (
@@ -29,7 +29,7 @@ export default function MyAccount() {
                                             <i className="bx bx-cube-alt"></i>
                                             <h4>My Listings</h4>
                                             <p>Click the button below to be redirected to your previous listings.</p>
-                                            <a href="#" className="more-btn"> Here <i className="bx"></i></a>
+                                            <Link to='/myListings' className="more-btn"> Here <i className="bx"></i></Link>
                                         </div>
                                     </div>
                                     <div className="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
