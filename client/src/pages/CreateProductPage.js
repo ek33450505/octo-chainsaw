@@ -1,15 +1,20 @@
 import Nav from '../components/Nav/nav.js';
-import Signup from '../components/Signup/signup.js';
 import Footer from '../components/Footer/footer.js';
+import CreateProduct from '../components/CreateProduct/CreateProduct.js';
 
-const SignupPage = () => {
+
+
+const CreateProductPage = () => {
+
+
     return (
+
         <div>
             <Nav />
-            <Signup />
+            <CreateProduct />
             <Footer />
         </div>
     )
 }
 
-export default SignupPage;
+export default CreateProductPage;

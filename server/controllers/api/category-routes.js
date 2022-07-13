@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     .then((dbCategoryData) => res.json(dbCategoryData))
     .catch((err) => {
       console.log(err);
-      res.status(500). json(err);
+      res.status(500).json(err);
     });
 });
 
@@ -23,7 +23,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ["id", "name", "description", "image", "state", "price"],
+        attributes: ["id", "name", "description", "image_url", "state", "price"],
         include: {
           model: User,
           attributes: ["username", "zip"]

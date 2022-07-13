@@ -2,7 +2,7 @@ const router = require("express").Router();
 const multer = require('multer')
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads')
+    cb(null, './uploads/')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname)
@@ -16,7 +16,13 @@ const withAuth = require('../../utils/auth');
 // get all products
 router.get("/", (req, res) => {
   Product.findAll({
-    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"]
+    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"],
+    include: [
+      {
+        model: Category,
+        attributes: ["name"]
+      }
+    ]
   })
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
@@ -54,12 +60,15 @@ router.get("/:id", (req, res) => {
 
 // create a product (add a listing)
 router.post("/", upload.single('productImage'), (req, res) => {
+  console.log(req.file)
   Product.create({
+
     category_id: req.body.category_id,
     user_id: req.body.user_id,  // change to session id eventually
     name: req.body.name,
     description: req.body.description,
     image_url: req.file.path,
+    state: req.body.state,
     price: req.body.price
   })
     .then(dbUserData => res.json(dbUserData))
