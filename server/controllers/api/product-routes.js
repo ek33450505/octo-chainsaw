@@ -68,7 +68,7 @@ router.post("/", upload.single('productImage'), (req, res) => {
     name: req.body.name,
     description: req.body.description,
     image_url: req.file.path,
-    // state: req.body.state,
+    state: req.body.state,
     price: req.body.price
   })
     .then(dbUserData => res.json(dbUserData))

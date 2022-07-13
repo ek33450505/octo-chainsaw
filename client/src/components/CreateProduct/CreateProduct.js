@@ -11,7 +11,7 @@ export default function CreateProduct() {
     const [description, setDescription] = useState('')
     const [productImage, setProductImage] = useState('')
     const [fileName, setFileName] = useState('Choose File')
-    // const [state, setState] = useState('')
+    const [state, setState] = useState('')
     const [price, setPrice] = useState('')
     const [categories, setCategories] = useState([])
 
@@ -43,7 +43,7 @@ export default function CreateProduct() {
         formData.append('name', name)
         formData.append('description', description)
         formData.append('productImage', productImage)
-        // formData.append('state', state)
+        formData.append('state', state)
         formData.append('price', price)
         try {
             Axios.post('http://localhost:3001/api/product/', formData, {
@@ -51,7 +51,7 @@ export default function CreateProduct() {
                     'Content-Type': 'multipart/form-data'
                 }
             })
-                .then(res => res.json('Your Product has been Created'))
+                .then(res => console.log(res))
                 .catch(err => console.log(err))
         } catch (err) {
             console.log(err)
@@ -63,110 +63,135 @@ export default function CreateProduct() {
 
         <div>
             <section className='signup added-border-top'>
-                <br></br>
-                <h2>Create a Listing</h2>
-                <form className='container'>
-                    <div className='row form-group'>
-                        <label htmlFor='category_id'>Please Select a Category/</label>
-                        <select
-                            className='form-control'
-                            id='category_id'
-                            onChange={(e) => setCategoryId(parseInt(e.target.value))}
-                        >
-                            {categories.map(element => {
-                                return (<option key={element.id} value={element.id}>{element.name}</option>)
-                            })}
-                        </select>
-                    </div>
-                    <div className='row form-group'>
-                        <label htmlFor='user_id'>User id/</label>
-                        <select
-                            className='form-control'
-                            id='user_id'
-                            onChange={(e) => setUserId(e.target.value)}
-                        >
-                            <option value={user}>User 1</option>
-                            <option value='2'>User 2</option>
-                            <option value='3'>User 3</option>
-                            <option value='4'>User 4</option>
-                            <option value='5'>User 5</option>
-                            <option value='6'>User 6</option>
-
-                        </select>
-                    </div>
-
-                    <div className='row form-group'>
-                        <label htmlFor='name'>Product name</label>
-                        <input
-                            type='text'
-                            className='form-control'
-                            id='name'
-
-                            onChange={(e) => setName(e.target.value)}
-                        />
-
-                    </div>
-
-                    <div className='row form-group'>
-                        <label htmlFor='description'>Product Description</label>
-                        <textarea
-                            maxLength='300'
-                            rows='4'
-                            cols='50'
-                            className='form-control'
-                            id='descr'
-
-                            onChange={(e) => setDescription(e.target.value)}
-                        ></textarea>
-                    </div>
-                    <div className='row form-group'>
-
-                        <label className='form-label' htmlFor='productImage'></label>
-                        <input
-                            type='file'
-                            className='form-control'
-                            id='file'
-
-                            onChange={(e) => {
-                                setProductImage(e.target.files[0]);
-                                setFileName(e.target.files[0].name)
-                            }}
-                        ></input>
-                    </div>
-                    {/* <div>
-                        <label htmlFor='state'>Product Availability</label>
-                        <select
-                            id='state'
-                            onChange={(e) => setState(e.target.value)}
-                        >
-                            <option value='available'>Available</option>
-                            <option value='not_available'>Not Available</option>
-                            <option value='renting'> Renting</option>
-                            <option value='requested'> Requested</option>
-                        </select>
-
-
-                    </div> */}
-                    <div className='row '>
-                        <div className='form-group'>
-                            <label htmlFor='price'>Price Per Day</label>
-                            <input
-                                type='range'
-                                min='1'
-                                max='1000'
-                                className='form-control-range'
-                                id='price'
-
-                                onChange={(e) => setPrice(e.target.value)}
-                            >
-                            </input>
+                <div className='container'>
+                    <br></br>
+                    <div className="col-lg-4" data-aos="fade-right">
+                        <div className="section-title">
+                            <h2>Create a listing</h2>
+                            <p>Create a listing to be rented by other rentIt users.</p>
                         </div>
                     </div>
-                    <div>
-                        <button type='button' className='' onClick={createProduct}></button>
-                    </div>
+                    <div className="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                        <form className='php-email-form mt-4'>
+                            <div className='row'>
+                                <div className="col-md-6 form-group">
+                                    <label className='form-label' htmlFor='category_id'>Please Select a Category/</label>
+                                    <select
+                                        className='form-control'
+                                        id='category_id'
+                                        onChange={(e) => setCategoryId(parseInt(e.target.value))}
+                                    >
+                                        {categories.map(element => {
 
-                </form>
+                                            return (<option key={element.id} value={element.id}>{element.name}</option>)
+                                        })}
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className="col-md-6 form-group">
+                                    <label htmlFor='user_id'>User id/</label>
+                                    <select
+                                        className='form-control'
+                                        id='user_id'
+                                        onChange={(e) => setUserId(e.target.value)}
+                                    >
+                                        <option selected value={user}>User 1</option>
+                                        <option value='2'>User 2</option>
+                                        <option value='3'>User 3</option>
+                                        <option value='4'>User 4</option>
+                                        <option value='5'>User 5</option>
+                                        <option value='6'>User 6</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className='row'>
+                                <div className="col-md-6 form-group">
+                                    <label className='form-label' htmlFor='name'>Product name</label>
+                                    <input
+                                        type='text'
+                                        className='form-control'
+                                        id='name'
+
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </div>
+
+                            </div>
+
+                            <div className='row'>
+                                <div className="row h-100">
+                                    <label className='form-label' htmlFor='description'>Product Description</label>
+                                    <textarea
+                                        maxLength='300'
+                                        rows='4'
+                                        cols='50'
+                                        className='form-control'
+                                        id='descr'
+
+                                        onChange={(e) => setDescription(e.target.value)}
+                                    ></textarea>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <div className="col-md-6 form-group">
+
+                                    <label className='form-label' htmlFor='productImage'></label>
+                                    <input
+                                        type='file'
+                                        className='form-control'
+                                        id='file'
+
+                                        onChange={(e) => {
+                                            setProductImage(e.target.files[0]);
+                                            setFileName(e.target.files[0].name)
+                                        }}
+                                    ></input>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label htmlFor='state'>Product Availability</label>
+                                    <select
+                                        id='state'
+                                        onChange={(e) => setState(e.target.value)}
+                                    >
+                                        <option value='available'>Available</option>
+                                        <option value='not_available'>Not Available</option>
+                                        <option value='renting'> Renting</option>
+                                        <option value='requested'> Requested</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div className='row '>
+                                <div className="col-md-6 form-group">
+                                    <label className='fomr-label' htmlFor='price'>Price Per Day</label>
+                                    <input
+                                        type='number'
+                                        min='1'
+                                        max='1000'
+                                        step='.50'
+                                        className='form-control'
+                                        id='price'
+
+                                        onChange={(e) => setPrice(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
+                            </div>
+                            <div className='row '>
+                                <div className="col-md-6 form-group">
+                                    <button type='button' className='' onClick={createProduct}></button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
             </section>
         </div>
     )
