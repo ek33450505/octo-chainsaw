@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS rentit_db;
+CREATE DATABASE rentit_db;
