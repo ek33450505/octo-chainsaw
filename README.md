@@ -19,6 +19,7 @@
   - [Questions](#Questions)
 
 
+![Screen Shot 2022-07-14 at 2 36 17 PM](https://user-images.githubusercontent.com/90393796/179061100-c20afaad-3e70-4be0-8389-ab2fc05a7563.png)
 
 
   ## Description: 
@@ -37,33 +38,41 @@
   ## Questions: 
 
   Ed:
+  
   https://github.com/ek33450505 
+  
+  
 
   Emily: 
+  
   https://github.com/emilyk221 
+  
+  
 
   Hien:
+  
   https://github.com/hienm9 
+  
+  
 
-  Ashley-Noel
+  Ashley-Noel:
+  
   https://github.com/ancs214 
+  
+  ancs214@gmail.com
 
   Cory:
+  
   https://github.com/LeMonSma 
+  
+  
 
   Michael:
+  
   https://github.com/bonomichael98
+  
+  
 
   Please feel free to reach out to us with any additional questions, comments, or concerns!
 
-  Ed: 
-  
-  Emily: 
-  
-  Hien: 
-  
-  Ashley-Noel: 
-  
-  Cory: 
-  
-  Michael: 
+ 
