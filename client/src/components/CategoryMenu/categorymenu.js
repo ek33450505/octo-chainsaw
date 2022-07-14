@@ -30,7 +30,6 @@ export default function CategoryMenu({ handleCategoryChange }) {
     //map categories to cards
     return (
         <>
-
             <div>
                 <section id="portfolio" className="portfolio">
                     <div className="container">
@@ -46,7 +45,7 @@ export default function CategoryMenu({ handleCategoryChange }) {
 
                                         <div onClick={() => handleCategoryChange(element.name)} className="col-lg-4 col-md-6 portfolio-item filter-app">
                                             <div className="portfolio-wrap">
-                                                <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
+                                                <img src={require(`../../assets/img/categories/${element.name}.png`)} className="img-fluid" alt=""></img>
                                                 <div className="portfolio-info">
                                                     <h4>{element.name}</h4>
                                                     <div className="portfolio-links">
@@ -62,6 +61,7 @@ export default function CategoryMenu({ handleCategoryChange }) {
                             </div>
                         </div>
                     </div>
+
                 </section>
             </div>
         </>

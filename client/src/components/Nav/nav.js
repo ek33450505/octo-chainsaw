@@ -11,7 +11,7 @@ export default function Nav() {
                 <div className='container'>
                     <div className='header-container d-flex align-items-center justify-content-between rounded'>
                         <div className='logo rounded-left'>
-                            <Link to='/' className="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg" className="d-inline-block align-top" alt="logo" />
+                            <Link to='/' className="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg"  alt="logo" />
                             </Link>
                         </div>
                         <nav id='navbar' className='navbar'>
