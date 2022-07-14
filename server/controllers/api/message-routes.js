@@ -5,27 +5,28 @@ const { Message, User, Product } = require('../../models');
 
 // Get all messages 
 router.get('/', (req, res) => {
-    Message.findAll({ 
-      include: [{
-        model: User,
-        as: 'user',
-        where: {
-          id: Sequelize.col('message.author_id')
-        }
-      }],
-      attributes: [
-        'message_text',
-        'author_id',
-        'recipient_id',
-        'product_id'
-      ]
+  Message.findAll({ 
+    // include: [{
+    //   model: User,
+    //   as: 'user',
+    //   where: {
+    //     id: Sequelize.col('message.author_id')
+    //   }
+    // }],
+    attributes: [
+      'message_text',
+      'author_id',
+      'recipient_id',
+      'product_id'
+    ]
+  })
+    .then(dbMessagetData => res.json(dbMessagetData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     })
-      .then(dbMessagetData => res.json(dbMessagetData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      })
-      });
+    });
+
   
   // Create a message to be sent
   router.post('/', (req, res) => {

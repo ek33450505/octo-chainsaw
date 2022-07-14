@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // const { default: Message } = require("../../../client/src/components/Message/message");
-const { User, Category, Product, Rent, Transaction } = require("../../models");
+const { User, Category, Product, Rent, Transaction, Message } = require("../../models");
 const { withAuth, signToken } = require('../../utils/auth');
 
 // get all users
