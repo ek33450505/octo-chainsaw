@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 });
 
 // get one user
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
     where: {
@@ -96,7 +96,7 @@ router.post("/login", (req, res) => {
 });
 
 // logout route
-router.post("/logout", (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -108,8 +108,7 @@ router.post("/logout", (req, res) => {
 });
 
 // update a user's info
-// router.put("/:id", withAuth, (req, res) => {
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -130,7 +129,7 @@ router.put("/:id", (req, res) => {
 });
 
 // delete a user
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id

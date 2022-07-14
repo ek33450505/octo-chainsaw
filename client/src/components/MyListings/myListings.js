@@ -11,9 +11,14 @@ export default function MyListings(props) {
     
     // axios get request to fetch all categories
     const fetchListings = async () => {
+        let token = Auth.getToken();
         await axios({
             method: 'get',
-            url: `/api/user/${props.userId}`
+            url: `/api/user/${props.userId}`,
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${token}`,
+              }
         })
             //update the state with category data
             .then(function (response) {

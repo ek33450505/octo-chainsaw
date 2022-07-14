@@ -1,29 +1,17 @@
 const router = require('express').Router();
-const { Sequelize } = require('sequelize');
-const { Message, User, Product } = require('../../models');
-const Auth = require('../../utils/auth');
+const { Message } = require('../../models');
+const { withAuth } = require('../../utils/auth');
 
 // Get all messages 
-router.get('/', (req, res) => {
-  Message.findAll({ 
-    // include: [{
-    //   model: User,
-    //   as: 'user',
-    //   where: {
-    //     id: Sequelize.col('message.author_id')
-    //   }
-    // }],
-    attributes: [
-      'message_text',
-      'author_id',
-      'recipient_id',
-      'product_id'
-    ]
-  })
-    .then(dbMessagetData => res.json(dbMessagetData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+router.get('/', withAuth, (req, res) => {
+    Message.findAll({
+      attributes: [
+        'id',
+        'message_text',
+        'author_id',
+        'recipient_id',
+        'product_id'
+      ]
     })
     });
 
@@ -56,7 +44,7 @@ router.get('/', (req, res) => {
 
   
   // Create a message to be sent
-  router.post('/', (req, res) => {
+  router.post('/', withAuth, (req, res) => {
     Message.create({
       message_text: req.body.message_text,
       // author_id: req.session.author_id,
@@ -72,10 +60,10 @@ router.get('/', (req, res) => {
   });
   
   // Edit Message
-  router.put('/:id', (req, res) => {});
+  router.put('/:id', withAuth, (req, res) => {});
   
   // Delete message
-  router.delete('/:id', (req, res) => {
+  router.delete('/:id', withAuth, (req, res) => {
     Message.destroy({
       where: {
         id: req.params.id
