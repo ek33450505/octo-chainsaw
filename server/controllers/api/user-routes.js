@@ -24,7 +24,7 @@ router.get("/:id", withAuth, (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ["id", "name", "description", "price"],
+        attributes: ["id", "name", "description", "price", 'image_url'],
         include: {
           model: Category,
           attributes: ["name"]

@@ -22,7 +22,6 @@ export default function MyListings(props) {
         })
             //update the state with category data
             .then(function (response) {
-                console.log(response.data);
                 setListings(response.data.products);
             })
     };
@@ -54,9 +53,9 @@ export default function MyListings(props) {
 
                                         <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                             <div className="portfolio-wrap">
-                                                <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
-                                                console.log(element.image_url)
-                                                {/* <img src={require(`../../../../server/${element.image_url}`)} className="img-fluid" alt=""></img> */}
+                                                <img src='' className="img-fluid" alt=""></img>
+                                                {console.log(element)}
+                                                {/* {<img src={require(`../../../../server/${element.image_url}`)} className="img-fluid" alt=""></img>} */}
                                                 <div className="portfolio-info">
                                                     <h4>{element.name}</h4>
                                                     <div className="portfolio-links">
