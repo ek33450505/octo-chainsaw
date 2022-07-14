@@ -38,7 +38,7 @@ export default function MyListings(props) {
         <div className="container">
 
             <div className="section-title text-center" data-aos="fade-left">
-                <h2>Your Products</h2>
+                <h2>My Products</h2>
             </div>
             <div className="items-container"> 
 
@@ -49,7 +49,9 @@ export default function MyListings(props) {
 
                             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                 <div className="portfolio-wrap">
-                                    <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
+                                <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
+                                    console.log(element.image_url)
+                                    {/* <img src={require(`../../../../server/${element.image_url}`)} className="img-fluid" alt=""></img> */}
                                     <div className="portfolio-info">
                                         <h4>{element.name}</h4>
                                         <div className="portfolio-links">
