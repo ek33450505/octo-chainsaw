@@ -18,7 +18,7 @@ Message.init(
             len: [1]
           }
         },
-        author_id: {
+        _id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {

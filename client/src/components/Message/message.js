@@ -2,56 +2,49 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-export default function Message(props) {
+
+
+export default function Message() {
   const [messages, setMessages] = useState([]);
 
   //on page render, run fetch function
   useEffect(() => {
     fetchMessages();
-  }, [props.username]);
+  }, []);
 
   //axios get request to fetch all categories
   const fetchMessages = async () => {
+    let token = Auth.getToken();
     await axios({
       method: 'get',
-      url: `/api/message/${props.username}`
+      url: `/api/message/${props.recipient_id}`,
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      }
 
     })
       //update the state with category data
       .then(function (response) {
         // console.log(response.data);
         setMessages(response.data);
-        console.log(response);
       })
   };
 
+  useEffect(() => {
+    fetchListings();
+}, [props.recipient_id]);
+
   //map categories to cards
   return (
-
     <div>
-        <section>
-        <h1 data-testid="h1tag">My Messages</h1>
       {messages.map(element => {
         return (
-          <Link to='/api/message/{props.username}'>
-            <h2>{element.username}</h2>
+          <Link to='/api/message/'>
             <h2>{element.message_text}</h2>
           </Link>
         )
       })}
-        <form id="reply-message">
-          <h1 data-testid="h1tag">Reply To Message</h1>
-          <div>
-            <label htmlFor="email">To:</label>
-            <input type="email" name="email" />
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea name="message" rows="5" />
-          </div>
-          <button data-testid="button" type="submit">Send</button>
-        </form>
-      </section>
-    );
     </div>
-  )}
+  )
+}

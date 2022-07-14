@@ -15,7 +15,7 @@ router.get('/', withAuth, (req, res) => {
     })
     });
 
-    router.get("/:recipient_id", (req, res) => {
+    router.get("/recipient_id", (req, res) => {
       Message.findOne({
         where: {
           id: req.params.recipient_id
