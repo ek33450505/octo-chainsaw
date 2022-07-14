@@ -53,14 +53,9 @@ export default function MyListings(props) {
 
                                         <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                             <div className="portfolio-wrap">
-<<<<<<< HEAD
-                                                <img src='' className="img-fluid" alt=""></img>
-                                                {console.log(element)}
-                                                {/* {<img src={require(`../../../../server/${element.image_url}`)} className="img-fluid" alt=""></img>} */}
-=======
                                                 <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
                                                 {/* <img src={require(`../../../../server/${element.image_url}`)} className="img-fluid" alt=""></img> */}
->>>>>>> 106fdcb9ce6ff7af96dee6eb6d6cabdb6aa49d40
+
                                                 <div className="portfolio-info">
                                                     <h4>{element.name}</h4>
                                                     <div className="portfolio-links">
