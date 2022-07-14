@@ -24,7 +24,6 @@ export default function ProductList({ currentCategory }) {
         })
             //update the state with category data
             .then(function (response) {
-                console.log(response.data);
                 setProducts(response.data);
             })
     };
@@ -58,11 +57,11 @@ export default function ProductList({ currentCategory }) {
                                                         <p>{product.description}</p>
                                                         <p>Rental Price: ${product.price}</p>
                                                         <p>Status: {product.state}</p>
-                                                        <p><Calendar currentState={product.state}/></p>
+                                                        <p><Calendar currentState={product.state} /></p>
                                                         <div className='row right-button'>
                                                             <div className="col-md-3 form-group">
                                                                 {/* <button type='button' className='rentit-button1' onClick={()=> setCurrentProduct(product.id)}><Link to='/'>Rent</Link>   </button> */}
-                                                                <button type='button' className='rentit-button1' onClick={()=> window.location.reload()}> Rent </button>
+                                                                <button type='button' className='rentit-button1' onClick={() => window.location.reload()}> Rent </button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -88,11 +87,11 @@ export default function ProductList({ currentCategory }) {
                                                         <h3>{product.description}</h3>
                                                         <h3>{product.price}</h3>
                                                         <p>Status: {product.state}</p>
-                                                        
+
                                                         <div className="col-md-3 form-group">
-                                                        <p><Calendar currentState={product.state} /></p>
-                                                                <button type='button' className='rentit-button2' onClick={()=> window.location.reload()}> Rent </button>
-                                                            </div>
+                                                            <p><Calendar currentState={product.state} /></p>
+                                                            <button type='button' className='rentit-button2' onClick={() => window.location.reload()}> Rent </button>
+                                                        </div>
                                                     </Popup>
                                                 </div>
                                             ) : null}

@@ -60,7 +60,7 @@ router.get("/:id", (req, res) => {
 });
 
 // create a product (add a listing)
-router.post("/", upload.single('productImage'), withAuth, (req, res) => {
+router.post("/", upload.single('productImage'), (req, res) => {
   console.log(req.file)
   Product.create({
 
@@ -68,7 +68,7 @@ router.post("/", upload.single('productImage'), withAuth, (req, res) => {
     user_id: req.body.user_id,  // change to session id eventually
     name: req.body.name,
     description: req.body.description,
-    // image_url: req.file.path,
+    image_url: req.file.path,
     state: req.body.state,
     price: req.body.price
   })
