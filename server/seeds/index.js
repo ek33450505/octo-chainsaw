@@ -53,27 +53,33 @@ Category.bulkCreate(
     [
         {
             name: 'Outdoor Gear',
-            description: 'Gear for outdoors'
+            description: 'Gear for outdoors',
+            image_url: 'https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/outdoor-gear.jpeg'
         },
         {
             name: 'Tools',
-            description: 'any and all tools'
+            description: 'any and all tools',
+            image_url: 'https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/tools.jpg'
         },
         {
             name: 'Sports',
-            description: 'any gear for sports'
+            description: 'any gear for sports',
+            image_url: 'https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/sports-equipment.jpg'
         },
         {
             name: 'Tech',
-            description: 'get geeky'
+            description: 'get geeky',
+            image_url: 'https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/tech.jpg'
         },
         {
             name: 'Motorized Vehicles',
-            description: 'any thing that requires a motor to run'
+            description: 'any thing that requires a motor to run',
+            image_url: 'https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/motorized-vehicles.jpg'
         },
         {
             name: 'Instruments',
-            description: 'stuff that make loud noices'
+            description: 'stuff that make loud noices',
+            image_url: 'https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/instruments.jpg'
         },
     ])
 
@@ -83,7 +89,7 @@ Product.bulkCreate([
         user_id: 1,
         name: 'climbing gear',
         description: 'All the gear you need to climb that hill',
-        img: '/uploads/Rock-Climbing-Equipment.jpg',
+        image_url: '/uploads/Rock-Climbing-Equipment.jpg',
         state: 'available',
         price: '50.00'
     },

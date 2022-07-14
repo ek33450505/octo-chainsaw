@@ -1,14 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Calendar from "../Calender/calender";
-import Popup from '../Popup/Popup';
+import Calendar from "../Calender/calender"
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
 export default function ProductList({ currentCategory }) {
     const [products, setProducts] = useState([]);
     const [currentProduct, setCurrentProduct] = useState("");
-    const [buttonPopup, setButtonPopup] = useState(false);
     //on page render, run fetch function
 
     useEffect(() => {
@@ -59,12 +57,11 @@ export default function ProductList({ currentCategory }) {
                                                         {/* <a href="#" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a> */}
                                                         <p>{product.description}</p>
                                                         <p>Rental Price: ${product.price}</p>
-                                                        <p>Status: {product.state}</p>
-                                                        <p><Calendar currentState={product.state}/></p>
                                                         <div className='row right-button'>
                                                             <div className="col-md-3 form-group">
                                                                 {/* <button type='button' className='rentit-button1' onClick={()=> setCurrentProduct(product.id)}><Link to='/'>Rent</Link>   </button> */}
                                                                 <button type='button' className='rentit-button1' onClick={()=> window.location.reload()}> Rent </button>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -75,32 +72,19 @@ export default function ProductList({ currentCategory }) {
                                 ) : (
                                     products.map(product => (
                                         <div>
-                                            <div>
-                                                {/* <h4 onClick={() => setCurrentProduct(product.id)}>{product.name}</h4> */}
-                                                <h4 onClick={() => setCurrentProduct(product.id)}>{product.name}</h4>
-                                            </div>
-
+                                            <h4 onClick={() => setCurrentProduct(product.id)}>{product.name}</h4>
                                             {currentProduct === product.id ? (
-                                                <div className='product-details'>
-                                                    <h4 onClick={() => setButtonPopup(true)}>{product.name}</h4>
-                                                    <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                                                        <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
-                                                        <h3>{product.name}</h3>
-                                                        <h3>{product.description}</h3>
-                                                        <h3>{product.price}</h3>
-                                                        <p>Status: {product.state}</p>
-                                                        
-                                                        <div className="col-md-3 form-group">
-                                                        <p><Calendar currentState={product.state} /></p>
-                                                                <button type='button' className='rentit-button2' onClick={()=> window.location.reload()}> Rent </button>
-                                                            </div>
-                                                    </Popup>
+                                                <div>
+                                                    <h3>{product.description}</h3>
+                                                    <h3>{product.price}</h3>
+                                                    <Calendar currentState={product.state} />
                                                 </div>
                                             ) : null}
                                         </div>
                                     ))
                                 )
                                 }
+
 
 
 

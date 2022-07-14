@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Message } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const { withAuth } = require('../../utils/auth');
 
 // Get all messages 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Message.findAll({
       attributes: [
         'id',
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
   });
   
   // Create a message to be sent
-  router.post('/', (req, res) => {
+  router.post('/', withAuth, (req, res) => {
     Message.create({
       message_text: req.body.message_text,
       // author_id: req.session.author_id,
@@ -37,10 +37,10 @@ router.get('/', (req, res) => {
   });
   
   // Edit Message
-  router.put('/:id', (req, res) => {});
+  router.put('/:id', withAuth, (req, res) => {});
   
   // Delete message
-  router.delete('/:id', (req, res) => {
+  router.delete('/:id', withAuth, (req, res) => {
     Message.destroy({
       where: {
         id: req.params.id

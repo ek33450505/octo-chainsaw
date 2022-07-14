@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios'
 import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 
 export default function CreateProduct() {
     const [category_id, setCategoryId] = useState()
@@ -63,9 +64,11 @@ export default function CreateProduct() {
         formData.append('state', state)
         formData.append('price', price)
         try {
+            let token = Auth.getToken();
             Axios.post('http://localhost:3001/api/product/', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    authorization: `Bearer ${token}`
                 }
             })
                 .then(res => console.log(res))
@@ -159,7 +162,7 @@ export default function CreateProduct() {
                                             type='number'
                                             min='1'
                                             max='1000'
-                                            step='.50'
+                                            step='1'
                                             className='form-control'
                                             id='price'
 
@@ -186,7 +189,7 @@ export default function CreateProduct() {
                                 </div>
                                 <div className='row center-button'>
                                     <div className="col-md-6 form-group">
-                                        <button type='button' className='rentit-button' onClick={createProduct}>rentIt    <i className="bi bi-arrow-right"></i></button>
+                                         <button type='button' className='rentit-button' onClick={createProduct}><Link to='/mylistings' >rentIt </Link>   <i className="bi bi-arrow-right"></i></button> 
                                     </div>
                                 </div>
 
