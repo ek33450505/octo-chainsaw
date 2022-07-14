@@ -34,6 +34,15 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(require('./controllers/'));
 
+// app.get('/service-worker.js', (req, res) => {
+//   console.log("getting service worker");
+//   res.sendFile(path.join(__dirname, '../client/build/service-worker.js'));
+// })
+
+// express.get('/service-worker.js', function(request, response) {
+//   response.sendFile(path.resolve(__dirname, '../.next', 'service-worker.js'));
+// })
+
 
 app.get('*', (req, res) => {
   console.log("prod get " + path.join(__dirname, '../client/build/index.html'))

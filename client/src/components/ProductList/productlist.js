@@ -37,7 +37,7 @@ export default function ProductList({currentCategory}) {
                     {/* <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200"> */}
                     {currentCategory?(
                         products.filter(p=>currentCategory===p.category.name).map(product=>(
-                            <div>
+                            <div key={product.id}>
                             <h4 onClick={()=> setCurrentProduct(product.id)}>{product.name}</h4> 
                             {currentProduct===product.id ? (
                                 <div>

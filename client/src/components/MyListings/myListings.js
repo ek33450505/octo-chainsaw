@@ -47,12 +47,14 @@ export default function MyListings(props) {
             </div>
             <div className="items-container"> 
 
+            {listings.length ? (
             <div className="row portfolio-container flex-item" data-aos="fade-up" data-aos-delay="200">
+                
                 {listings.map(element => {
                     return (
                         
 
-                            <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <div key={element.id} className="col-lg-4 col-md-6 portfolio-item filter-app">
                                 <div className="portfolio-wrap">
                                     <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
                                     <div className="portfolio-info">
@@ -69,6 +71,10 @@ export default function MyListings(props) {
                     )
                 })}
                 </div>
+                ) : (
+                    <h3>You haven't listed any products yet!</h3>
+                )}
+                
             </div>
 
         </div>

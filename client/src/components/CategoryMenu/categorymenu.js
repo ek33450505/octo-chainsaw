@@ -44,7 +44,7 @@ export default function CategoryMenu({ handleCategoryChange }) {
                                     return (
 
 
-                                        <div onClick={() => handleCategoryChange(element.name)} className="col-lg-4 col-md-6 portfolio-item filter-app">
+                                        <div key={element.id} onClick={() => handleCategoryChange(element.name)} className="col-lg-4 col-md-6 portfolio-item filter-app">
                                             <div className="portfolio-wrap">
                                                 <img src='https://github.com/ek33450505/octo-chainsaw/blob/feature/pages/client/src/assets/img/categories/portfolio-1.jpg?raw=true' className="img-fluid" alt=""></img>
                                                 <div className="portfolio-info">
