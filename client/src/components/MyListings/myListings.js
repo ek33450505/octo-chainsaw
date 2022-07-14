@@ -4,40 +4,16 @@ import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
 
 
-export default function MyListings() {
-    const [userId, setUserId] = useState({});
+export default function MyListings(props) {
+    // const [userId, setUserId] = useState();
     const [listings, setListings] = useState([]);
-
-   
-
-    // obtain user id from JWT
-    const getUserData = async () => {
-        try {
-            //use Auth obj to retrieve token from storage and set to variable 'token'
-            const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-            if (!token) {
-                return false;
-            }
-        
-        //retrieve user id saved in token (user id)
-        const user = Auth.getProfile();
-            // console.log(user.data.id);
-            setUserId(user.data.id);
-            
-            
-            } catch (err) {
-                console.error(err);
-            }
-        };
-
 
     
     // axios get request to fetch all categories
-    const fetchListings = async (userId) => {
+    const fetchListings = async () => {
         await axios({
             method: 'get',
-            url: `/api/user/${userId}`
+            url: `/api/user/${props.userId}`
         })
             //update the state with category data
             .then(function (response) {
@@ -46,10 +22,11 @@ export default function MyListings() {
             })
     };
 
+   
+
     useEffect(() => {
-        getUserData();
-        fetchListings(userId);
-    }, []);
+        fetchListings();
+    }, [props.userId]);
    
 
 
@@ -61,12 +38,14 @@ export default function MyListings() {
         <div className="container">
 
             <div className="section-title text-center" data-aos="fade-left">
-                <h2>Categories</h2>
+                <h2>Your Products</h2>
             </div>
             <div className="items-container"> 
+
+            <div className="row portfolio-container flex-item" data-aos="fade-up" data-aos-delay="200">
                 {listings.map(element => {
                     return (
-                        <div className="row portfolio-container flex-item" data-aos="fade-up" data-aos-delay="200">
+                        
 
                             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                                 <div className="portfolio-wrap">
@@ -81,9 +60,10 @@ export default function MyListings() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     )
                 })}
+                </div>
             </div>
 
         </div>

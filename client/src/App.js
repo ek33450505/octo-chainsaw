@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import Auth from '../src/utils/auth';
 import './App.css';
 import Home from './pages/Home';
 import Nav from '../src/components/Nav/nav.js';
@@ -15,6 +17,33 @@ import MyListings from '../src/components/MyListings/myListings';
 
 
 function App() {
+
+  const [userId, setUserId] = useState();
+
+    const getUserData = async () => {
+        try {
+            //use Auth obj to retrieve token from storage and set to variable 'token'
+            const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+            if (!token) {
+                return false;
+            }
+        
+        //retrieve user id saved in token (user id)
+        const user = Auth.getProfile();
+            console.log(user.data.id);
+            setUserId(user.data.id);
+            
+            
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        useEffect(() => {
+            getUserData();
+        })
+
 
   return (
     <Router>
@@ -43,7 +72,7 @@ function App() {
         />
         <Route
           path='/mylistings'
-          element={<MyListings />}
+          element={<MyListings userId={userId}/>}
         />
         <Route
           path='/createproduct'
