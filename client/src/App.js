@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import Auth from '../src/utils/auth';
 import './App.css';
 import Home from './pages/Home';
 import Nav from '../src/components/Nav/nav.js';
@@ -10,10 +12,39 @@ import ProductList from '../src/components/ProductList/productlist.js';
 import CategoryMenu from '../src/components/CategoryMenu/categorymenu';
 import MyAccount from '../src/components/MyAccount/myaccount.js';
 import Contact from '../src/components/Contact/contact.js';
-import CreateProduct from './components/CreateProduct/CreateProduct';
+import CreateProduct from '../src/components/CreateProduct/CreateProduct'
+import MyListings from '../src/components/MyListings/myListings';
+import Calendar from '../src/components/Calendar/calendar';
 
 
 function App() {
+
+  const [userId, setUserId] = useState();
+
+    const getUserData = async () => {
+        try {
+            //use Auth obj to retrieve token from storage and set to variable 'token'
+            const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+            if (!token) {
+                return false;
+            }
+        
+        //retrieve user id saved in token (user id)
+        const user = Auth.getProfile();
+            console.log(user.data.id);
+            setUserId(user.data.id);
+            
+            
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        useEffect(() => {
+            getUserData();
+        })
+
 
   return (
     <Router>
@@ -41,7 +72,11 @@ function App() {
           element={<MyAccount />}
         />
         <Route
-          path='/createListing'
+          path='/mylistings'
+          element={<MyListings userId={userId}/>}
+        />
+        <Route
+          path='/createproduct'
           element={<CreateProduct />}
         />
         <Route
@@ -51,6 +86,10 @@ function App() {
         <Route
           path='/contact'
           element={<Contact />}
+        />
+        <Route
+          path='/calendar'
+          element={<Calendar />}
         />
       </Routes>
       <Footer />

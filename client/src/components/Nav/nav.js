@@ -1,16 +1,17 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
-export default function Nav() {
+
+export default function Nav() { 
+
+
     return (
         <div>
             <header id='header' className='fixed-top d-flex align-items-center'>
                 <div className='container'>
-                    <div className='header-container d-flex align-items-center justify-content-between'>
-                        <div className='logo'>
-                            <Link to='/'>
-                                {/* <h1 className='text-light'><span>rentIt</span></h1> */}
-                                <a class="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg" class="d-inline-block align-top" alt="logo"/></a>
+                    <div className='header-container d-flex align-items-center justify-content-between rounded'>
+                        <div className='logo rounded-left'>
+                            <Link to='/' className="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg"  alt="logo" />
                             </Link>
                         </div>
                         <nav id='navbar' className='navbar'>
@@ -24,7 +25,7 @@ export default function Nav() {
                                 {Auth.loggedIn() ? (
                                     <>
                                         <li>
-                                            <Link to='createListing' className='nav-link scrollto'>
+                                            <Link to='createProduct' className='nav-link scrollto'>
                                                 Create Listing
                                             </Link>
                                         </li>

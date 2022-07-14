@@ -23,6 +23,9 @@ Category.init(
             validate: {
                 len: [1] 
             }
+        },
+        image_url: {
+            type: DataTypes.STRING
         }
     },
     {
