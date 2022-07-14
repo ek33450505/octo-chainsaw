@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Rent } = require("../../models");
+const { withAuth } = require('../../utils/auth');
 
 // get all rent
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
     Rent.findAll({
     })
       .then(dbRentData => res.json(dbRentData))
@@ -13,7 +14,7 @@ router.get("/", (req, res) => {
   });
 
 //get one rent
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
     Rent.findOne({
       where: {
         id: req.params.id
@@ -33,7 +34,7 @@ router.get("/:id", (req, res) => {
   });
   
 // create a rent
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
     Rent.create({
       amount: req.body.amount,
       notes: req.body.notes
@@ -60,7 +61,7 @@ router.post("/", (req, res) => {
   });
 
 // update a rent
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Rent.update(req.body, {
       individualHooks: true,
       where: {
@@ -81,7 +82,7 @@ router.put("/:id", (req, res) => {
   });
   
   // delete a rent
-  router.delete("/:id", (req, res) => {
+  router.delete("/:id", withAuth, (req, res) => {
     Rent.destroy({
       where: {
         id: req.params.id

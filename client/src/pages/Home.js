@@ -1,17 +1,17 @@
 import CategoryMenu from '../components/CategoryMenu/categorymenu.js';
-import Nav from '../components/Nav/nav.js';
-import Hero from '../components/Hero/hero.js';
-import Footer from '../components/Footer/footer.js';
-
-
+import ProductList from '../components/ProductList/productlist.js';
+import React, {useState} from 'react';
 
 const Home = () => {
+    const [currentCategory, setCurrentCategory] = useState("")
+
+    const handleCategoryChange = (category) => setCurrentCategory(category)
+    
     return (
         <div>
-            <Nav />
-            <Hero />
-            <CategoryMenu />
-            <Footer />
+            {/* <CategoryMenu /> */}
+            {!currentCategory && <CategoryMenu handleCategoryChange = {handleCategoryChange}/>}
+            {currentCategory && <ProductList currentCategory = {currentCategory}/>}
         </div>
     )
 }

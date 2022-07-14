@@ -1,8 +1,9 @@
 const router = require("express").Router();
+const { withAuth } = require('../../utils/auth');
 const multer = require('multer')
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads')
+    cb(null, './uploads/')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname)
@@ -11,12 +12,18 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 const { Category, Product, User } = require("../../models");
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // get all products
 router.get("/", (req, res) => {
   Product.findAll({
-    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"]
+    attributes: ["id", 'category_id', "name", "description", "image_url", "state", "price"],
+    include: [
+      {
+        model: Category,
+        attributes: ["name"]
+      }
+    ]
   })
     .then((dbProductData) => res.json(dbProductData))
     .catch((err) => {
@@ -53,13 +60,16 @@ router.get("/:id", (req, res) => {
 });
 
 // create a product (add a listing)
-router.post("/", upload.single('productImage'), (req, res) => {
+router.post("/", upload.single('productImage'), withAuth, (req, res) => {
+  console.log(req.file)
   Product.create({
+
     category_id: req.body.category_id,
     user_id: req.body.user_id,  // change to session id eventually
     name: req.body.name,
     description: req.body.description,
     image_url: req.file.path,
+    state: req.body.state,
     price: req.body.price
   })
     .then(dbUserData => res.json(dbUserData))
@@ -70,7 +80,7 @@ router.post("/", upload.single('productImage'), (req, res) => {
 });
 
 // update a product's info
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Product.update(req.body, {
     where: {
       id: req.params.id
@@ -90,7 +100,7 @@ router.put("/:id", (req, res) => {
 });
 
 // delete a product
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Product.destroy({
     where: {
       id: req.params.id

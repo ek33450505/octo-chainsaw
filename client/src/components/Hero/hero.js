@@ -7,7 +7,7 @@ export default function Hero() {
         <div>
             <section id="hero" className="d-flex align-items-center">
                 <div className="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-                    <h1>Make renting simple with rentIt</h1>
+                    <h1>Make renting simple with RentIt</h1>
                 </div>
             </section>
         </div>
