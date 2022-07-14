@@ -1615,7 +1615,6 @@ section {
 }
 
 .rentit-button1 {
-  /* background:white; */
   border: 0;
   padding: 5px 15px;
   color: red;
@@ -1628,6 +1627,22 @@ section {
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: right;
+}
+
+.rentit-button2 {
+  border: 0;
+  padding: 5px 15px;
+  color: red;
+  font-style: italic;
+  transition: 0.4s;
+  border-radius: 20px;
+  font-size: 18px;
+  font-family:cursive;
+  background-image: url('../img/RentIt-button.png');
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right;
+  justify-items: right;
 }
 
 .center-button {
