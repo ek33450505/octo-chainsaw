@@ -19,7 +19,8 @@
   - [Questions](#Questions)
 
 
-![Screen Shot 2022-07-14 at 2 36 17 PM](https://user-images.githubusercontent.com/90393796/179061100-c20afaad-3e70-4be0-8389-ab2fc05a7563.png)
+![Screen Shot 2022-07-14 at 5 50 15 PM](https://user-images.githubusercontent.com/90393796/179093602-76780c1c-6418-415b-ac42-c549b1355e78.png)
+
 
 
   ## Description: 
