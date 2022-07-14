@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Rent, Category, Product, Transaction } = require("../../models");
+const { withAuth } = require('../../utils/auth');
 
 // get all transactions
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
     Transaction.findAll({
     })
       .then(dbTransactionData => res.json(dbTransactionData))
@@ -13,7 +14,7 @@ router.get("/", (req, res) => {
   });
 
 //get one transaction
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
     Transaction.findOne({
       where: {
         id: req.params.id
@@ -33,7 +34,7 @@ router.get("/:id", (req, res) => {
   });
   
 // create transaction
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
     Transaction.create({
       amount: req.body.amount,
       notes: req.body.notes
@@ -55,7 +56,7 @@ router.post("/", (req, res) => {
   });
 
 // updated transaction by :id
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Transaction.update(req.body, {
       individualHooks: true,
       where: {
@@ -76,7 +77,7 @@ router.put("/:id", (req, res) => {
   });
   
   // delete a transaction
-  router.delete("/:id", (req, res) => {
+  router.delete("/:id", withAuth, (req, res) => {
     Transaction.destroy({
       where: {
         id: req.params.id
