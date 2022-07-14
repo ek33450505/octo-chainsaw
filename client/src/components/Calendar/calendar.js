@@ -1,12 +1,11 @@
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
-import { addDays } from 'date-fns'
+import { addDays } from 'date-fns';
 
 
 
-
-export default function Calender() {
+export default function Calendar() {
 
 
     const [startDate, setStartDate] = useState(new Date());
@@ -14,7 +13,7 @@ export default function Calender() {
     return (
         <>
             <form>
-                <DatePicker
+                <DatePicker 
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
                     selectsStart
@@ -23,7 +22,7 @@ export default function Calender() {
                     minDate={addDays(new Date(), 1)}
                     maxDate={addDays(new Date(), 365)}
                 />
-                <DatePicker
+                <DatePicker 
                     selected={endDate}
                     onChange={(date) => setEndDate(date)}
                     selectsEnd
