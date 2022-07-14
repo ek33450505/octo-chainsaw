@@ -64,9 +64,11 @@ export default function CreateProduct() {
         formData.append('state', state)
         formData.append('price', price)
         try {
+            let token = Auth.getToken();
             Axios.post('http://localhost:3001/api/product/', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    authorization: `Bearer ${token}`
                 }
             })
                 .then(res => console.log(res))

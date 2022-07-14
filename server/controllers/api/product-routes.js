@@ -60,7 +60,7 @@ router.get("/:id", (req, res) => {
 });
 
 // create a product (add a listing)
-router.post("/", withAuth, upload.single('productImage'), (req, res) => {
+router.post("/", upload.single('productImage'), withAuth, (req, res) => {
   console.log(req.file)
   Product.create({
 
