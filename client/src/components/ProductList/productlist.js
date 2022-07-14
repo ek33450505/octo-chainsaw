@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Calendar from "../Calender/calender";
+import Calendar from "../Calendar/calendar";
 import Popup from '../Popup/Popup';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -41,8 +41,6 @@ export default function ProductList({ currentCategory }) {
                         <div className="items-container">
                             <div className="row portfolio-container flex-item" data-aos="fade-up" data-aos-delay="200">
 
-
-
                                 {currentCategory ? (
                                     products.filter(p => currentCategory === p.category.name).map(product => (
 
@@ -80,8 +78,9 @@ export default function ProductList({ currentCategory }) {
                                             </div>
 
                                             {currentProduct === product.id ? (
-                                                <div className='product-details'>
+                                                <div className='product-details product-selected'>
                                                     <h4 onClick={() => setButtonPopup(true)}>{product.name}</h4>
+
                                                     <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                                                         <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
                                                         <h3>{product.name}</h3>
@@ -114,16 +113,3 @@ export default function ProductList({ currentCategory }) {
     )
 }
 
-
-
-// <div>
-// <h4 onClick={() => setCurrentProduct(product.id)}>{product.name}</h4>
-// {currentProduct === product.id ? (
-//     <div>
-//         <h3>{product.description}</h3>
-//         <h3>{product.price}</h3>
-//         <h4>{product.state}</h4>
-//         <Calendar currentState={product.state} />
-//     </div>
-// ) : null}
-// </div>

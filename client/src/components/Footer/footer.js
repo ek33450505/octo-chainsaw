@@ -44,7 +44,7 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/login' className="nav-link scrollto">
                                         Login
                                     </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto onClick={Auth.logout}">
+                                    <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto" onClick={Auth.logout}>
                                         Logout
                                     </Link></li>
                                 </ul>
