@@ -9,7 +9,6 @@ const Home = () => {
     
     return (
         <div>
-            {/* <CategoryMenu /> */}
             {!currentCategory && <CategoryMenu handleCategoryChange = {handleCategoryChange}/>}
             {currentCategory && <ProductList currentCategory = {currentCategory}/>}
         </div>

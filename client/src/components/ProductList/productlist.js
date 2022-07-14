@@ -104,7 +104,6 @@ export default function ProductList({ currentCategory }) {
 
 
 
-
                             </div>
                         </div>
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
-export default function Nav() {
+
+export default function Nav() { 
+
+
     return (
         <div>
             <header id='header' className='fixed-top d-flex align-items-center'>

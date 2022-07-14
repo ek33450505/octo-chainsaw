@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-// const axios = require('axios').default;
+
 
 export default function CategoryMenu({ handleCategoryChange }) {
     const [categories, setCategories] = useState([]);

@@ -18,7 +18,7 @@ export default function MyListings(props) {
             headers: {
                 'Content-Type': 'application/json',
                 authorization: `Bearer ${token}`,
-              }
+            }
         })
             //update the state with category data
             .then(function (response) {
@@ -67,12 +67,10 @@ export default function MyListings(props) {
                                                 </div>
                                             </div>
                                         </div>
-
                                     )
                                 })}
                             </div>
                         </div>
-
                     </div>
                 </section>
             </div>
