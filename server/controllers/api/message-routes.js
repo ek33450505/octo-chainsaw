@@ -27,6 +27,33 @@ router.get('/', (req, res) => {
     })
     });
 
+    router.get("/:recipient_id", (req, res) => {
+      Message.findOne({
+        where: {
+          id: req.params.recipient_id
+        },
+        attributes: ["message_text", "author_id", "recipient_id", "product_id"],
+        include: [
+          {
+            model: User,
+            as: 'user',
+            attributes: ["id", "username", "zip"]
+          }
+        ],
+      })
+        .then((dbMessageData) => {
+          if (!dbMessageData) {
+            res.status(404).json({ message: "No message found with this id" });
+            return;
+          }
+          res.json(dbMessageData);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    });
+
   
   // Create a message to be sent
   router.post('/', (req, res) => {

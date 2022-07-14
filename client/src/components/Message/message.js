@@ -2,19 +2,19 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
-export default function Message() {
+export default function Message(props) {
   const [messages, setMessages] = useState([]);
 
   //on page render, run fetch function
   useEffect(() => {
     fetchMessages();
-  }, []);
+  }, [props.username]);
 
   //axios get request to fetch all categories
   const fetchMessages = async () => {
     await axios({
       method: 'get',
-      url: '/api/message'
+      url: `/api/message/${props.username}`
 
     })
       //update the state with category data
@@ -33,7 +33,7 @@ export default function Message() {
         <h1 data-testid="h1tag">My Messages</h1>
       {messages.map(element => {
         return (
-          <Link to='/api/message'>
+          <Link to='/api/message/{props.username}'>
             <h2>{element.username}</h2>
             <h2>{element.message_text}</h2>
           </Link>

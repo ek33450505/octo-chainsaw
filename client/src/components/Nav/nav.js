@@ -8,9 +8,7 @@ export default function Nav() {
                 <div className='container'>
                     <div className='header-container d-flex align-items-center justify-content-between'>
                         <div className='logo'>
-                            <Link to='/'>
-                                {/* <h1 className='text-light'><span>rentIt</span></h1> */}
-                                <a class="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg" class="d-inline-block align-top" alt="logo"/></a>
+                            <Link to='/' className="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg" className="d-inline-block align-top" alt="logo" />
                             </Link>
                         </div>
                         <nav id='navbar' className='navbar'>
