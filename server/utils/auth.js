@@ -36,4 +36,6 @@ const signToken = ({ username, email, id }) => {
   return jwt.sign({ data: user }, secret, { expiresIn: expiration });
 }
 
+
+
 module.exports = { withAuth, signToken };
