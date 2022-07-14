@@ -30,7 +30,6 @@ export default function CategoryMenu({ handleCategoryChange }) {
     //map categories to cards
     return (
         <>
-
             <div>
                 <section id="portfolio" className="portfolio">
                     <div className="container">
@@ -62,8 +61,6 @@ export default function CategoryMenu({ handleCategoryChange }) {
                         </div>
 
                     </div>
-
-
 
                 </section>
             </div>

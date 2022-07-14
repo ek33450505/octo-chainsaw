@@ -55,6 +55,11 @@ h6 {
   opacity: 1;
 }
 
+.items-container{
+cursor: pointer;
+}
+
+
 /*--------------------------------------------------------------
   # Disable AOS delay on mobile
   --------------------------------------------------------------*/
@@ -827,7 +832,8 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #fff;
+  /* color: #fff; */
+  color: rgb(228, 228, 138);
   font-weight: 600;
 }
 
@@ -1606,12 +1612,30 @@ section {
     text-align: center;
     font-size: 20px;
     margin-left: 15%;
+}
 
-
+.rentit-button1 {
+  /* background:white; */
+  border: 0;
+  padding: 5px 15px;
+  color: red;
+  font-style: italic;
+  transition: 0.4s;
+  border-radius: 20px;
+  font-size: 18px;
+  font-family:cursive;
+  background-image: url('../img/RentIt-button.png');
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right;
 }
 
 .center-button {
     justify-content: center;
+}
+
+.right-button {
+  justify-content:right;
 }
 
 /*!
