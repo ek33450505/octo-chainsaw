@@ -14,7 +14,7 @@ import MyAccount from '../src/components/MyAccount/myaccount.js';
 import Contact from '../src/components/Contact/contact.js';
 import CreateProduct from '../src/components/CreateProduct/CreateProduct'
 import MyListings from '../src/components/MyListings/myListings';
-import Calendar from '../src/components/Calender/calender';
+import Calendar from '../src/components/Calendar/calendar';
 
 
 function App() {

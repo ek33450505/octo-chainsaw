@@ -2644,6 +2644,10 @@ cursor: pointer;
   .center-button {
       justify-content: center;
   }
+
+  .product-selected {
+    background-color: rgba(127, 171, 189, 0.253);
+  }
   
   /*!
      * Bootstrap Grid v5.1.3 (https://getbootstrap.com/)
