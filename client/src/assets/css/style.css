@@ -88,7 +88,7 @@ cursor: pointer;
   h6 {
     font-family: "Raleway", sans-serif;
   }
-  
+}
   /*--------------------------------------------------------------
     # Back to top button
     --------------------------------------------------------------*/
@@ -1129,10 +1129,6 @@ cursor: pointer;
     height: 1px;
     background: #b5b3ba;
     bottom: 0;
-<<<<<<< HEAD
-    left: 50%;
-    transform: translateX(-50%);
-=======
     left: 0;
   } */
 .section-title p {
@@ -1991,8 +1987,8 @@ cursor: pointer;
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
->>>>>>> category-product-styles
   }
+}
   
   .team .member p {
     margin: 10px 0 0 0;
@@ -2161,18 +2157,6 @@ cursor: pointer;
   
   .login .info i {
     font-size: 20px;
-<<<<<<< HEAD
-    color: #fff;
-    float: left;
-    width: 44px;
-    height: 44px;
-    background: #009970;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-=======
     margin-left: 15%;
 }
 
@@ -2294,8 +2278,8 @@ cursor: pointer;
   .container-sm,
   .container {
     max-width: 540px;
->>>>>>> category-product-styles
   }
+}
   
   .login .info h4 {
     padding: 0 0 0 60px;
