@@ -1457,7 +1457,7 @@ section {
   background-color: rgba(127, 171, 189, .253)
 }
 
-*/:root {
+:root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
