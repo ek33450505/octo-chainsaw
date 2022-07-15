@@ -92,21 +92,7 @@ h6 {
 
 @media screen and (max-width:768px) {
 
-<<<<<<< HEAD
-
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-  
-  a {
-    color: #009970;
-    text-decoration: none;
-  }
-  
-=======
   a,
->>>>>>> 91bfb2586a80e79d6a7603601a9aafe93e5c4f24
   a:hover {
     text-decoration: none
   }
