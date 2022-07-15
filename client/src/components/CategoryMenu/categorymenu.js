@@ -46,6 +46,8 @@ export default function CategoryMenu({ handleCategoryChange }) {
                                         <div onClick={() => handleCategoryChange(element.name)} className="col-lg-4 col-md-6 portfolio-item filter-app">
                                             <div className="portfolio-wrap">
                                                 {/* <img src={require(`../../assets/img/categories/${element.name}.png`)} className="img-fluid" alt=""></img> */}
+                                                 <img src={require(`../../assets/img/categories/Instruments.png`)} className="img-fluid" alt=""></img>
+                                               
                                                 <div className="portfolio-info">
                                                     <h4>{element.name}</h4>
                                                     <div className="portfolio-links">
