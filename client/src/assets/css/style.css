@@ -740,6 +740,7 @@ section {
 .portfolio .portfolio-wrap::before {
   content: "";
   background: rgba(54, 52, 58, .6);
+  /* background: rgba(182, 179, 186, 0); */
   position: absolute;
   left: 0;
   right: 0;
@@ -1454,7 +1455,8 @@ section {
 }
 
 .product-selected {
-  background-color: rgba(127, 171, 189, .253)
+  background-color: rgba(127, 171, 189, .253);
+  width: 40%;
 }
 
 */:root {

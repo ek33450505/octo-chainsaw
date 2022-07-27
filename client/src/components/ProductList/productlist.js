@@ -99,7 +99,7 @@ export default function ProductList({ currentCategory }) {
             return (
                 products.map(product => (
                     <div>
-                        <h4 onClick={() => setProduct(product)}>{product.name}</h4>
+                        <h4 className='product-selected' onClick={() => setProduct(product)}>{product.name}</h4>
                         {renderProduct(product)}
                     </div>
                 ))
