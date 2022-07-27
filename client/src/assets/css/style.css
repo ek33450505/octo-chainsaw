@@ -739,8 +739,8 @@ section {
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  /* background: rgba(54, 52, 58, .6); */
-  background: rgba(182, 179, 186, 0);
+  background: rgba(54, 52, 58, .6);
+  /* background: rgba(182, 179, 186, 0); */
   position: absolute;
   left: 0;
   right: 0;
@@ -758,7 +758,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-info {
   opacity: 1;
-  /* position: absolute; */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -1455,10 +1455,11 @@ section {
 }
 
 .product-selected {
-  background-color: rgba(127, 171, 189, .253)
+  background-color: rgba(127, 171, 189, .253);
+  width: 40%;
 }
 
-:root {
+*/:root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
