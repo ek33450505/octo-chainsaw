@@ -20,6 +20,7 @@ import Calendar from '../src/components/Calendar/calendar';
 function App() {
 
   const [userId, setUserId] = useState();
+  const [currentCategory, setCurrentCategory] = useState("")
 
     const getUserData = async () => {
         try {
@@ -48,12 +49,12 @@ function App() {
 
   return (
     <Router>
-      <Nav />
+      <Nav currentCategory = {currentCategory} setCurrentCategory={setCurrentCategory}/>
       <Hero />
       <Routes>
         <Route
           path='/'
-          element={<Home />}
+          element={<Home currentCategory = {currentCategory} setCurrentCategory={setCurrentCategory}/>}
         />
         <Route
           path='/signup'
@@ -92,7 +93,7 @@ function App() {
           element={<Calendar />}
         />
       </Routes>
-      <Footer />
+      <Footer currentCategory = {currentCategory} setCurrentCategory={setCurrentCategory}/>
     </Router>
   );
 }

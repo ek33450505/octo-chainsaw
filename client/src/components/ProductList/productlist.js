@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-export default function ProductList({ currentCategory }) {
+export default function ProductList({ currentCategory, setCurrentCategory }) {
     const [products, setProducts] = useState([]);
     const [currentProductId, setCurrentProductId] = useState("");
     const [buttonPopup, setButtonPopup] = useState(false);
@@ -17,6 +17,8 @@ export default function ProductList({ currentCategory }) {
     useEffect(() => {
         fetchProducts();
     }, []);
+
+    const handleUpdateCategory = (category) => setCurrentCategory("")
 
     //axios get request to fetch all products
     const fetchProducts = async () => {
@@ -82,7 +84,9 @@ export default function ProductList({ currentCategory }) {
                                 <div className='row right-button'>
                                     <div className="col-md-3 form-group">
                                         {/* <button type='button' className='rentit-button1' onClick={()=> setCurrentProduct(product.id)}><Link to='/'>Rent</Link>   </button> */}
-                                        <button type='button' className='rentit-button1' onClick={() => window.location.reload()}> Rent </button>
+                                        {/* <button type='button' className='rentit-button1' onClick={() => window.location.reload()}> Rent 1 </button> */}
+                                        <button type='button' className='rentit-button1' onClick={handleUpdateCategory}> Rent 1 </button>
+
                                     </div>
                                 </div>
                             </div>

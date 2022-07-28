@@ -2,21 +2,22 @@ import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
-export default function Nav() { 
+export default function Nav({ setCurrentCategory }) { 
 
+    const handleUpdateCategory = () => setCurrentCategory("")
 
     return (
         <div>
             <header id='header' className='fixed-top d-flex align-items-center'>
                 <div className='container'>
                     <div className='header-container d-flex align-items-center justify-content-between rounded'>
-                        <div className='logo rounded-left'onClick={() => window.location.reload()} >
+                        <div className='logo rounded-left'onClick={handleUpdateCategory} >
                             <Link to='/' className="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg"  alt="logo" />
                             </Link>
                         </div>
                         <nav id='navbar' className='navbar'>
                             <ul>
-                                <li onClick={() => window.location.reload()}>
+                                <li onClick={handleUpdateCategory}>
                                     <Link to='/' className='nav-link scrollto'>
                                         Categories
                                     </Link>

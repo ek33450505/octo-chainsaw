@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
 
-export default function Footer() {
+export default function Footer({ setCurrentCategory }) {
+
+    const handleUpdateCategory = () => setCurrentCategory("")
+
     return (
         <div>
             <footer id="footer">
@@ -20,7 +23,7 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto">
                                         Home
                                     </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto">
+                                    <li onClick={handleUpdateCategory}><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto">
                                         Categories
                                     </Link></li>
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/productlist' className="nav-link scrollto">
@@ -41,12 +44,12 @@ export default function Footer() {
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/signup' className="nav-link scrollto">
                                         Signup
                                     </Link></li>
-                                    <li><i className="bx bx-chevron-right"></i> <Link to='/login' className="nav-link scrollto">
+                                    {/* <li><i className="bx bx-chevron-right"></i> <Link to='/login' className="nav-link scrollto">
                                         Login
                                     </Link></li>
                                     <li><i className="bx bx-chevron-right"></i> <Link to='/' className="nav-link scrollto" onClick={Auth.logout}>
                                         Logout
-                                    </Link></li>
+                                    </Link></li> */}
                                 </ul>
                             </div>
                         </div>
