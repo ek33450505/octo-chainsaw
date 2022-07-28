@@ -37,10 +37,12 @@ export default function ProductList({ currentCategory }) {
             return (
                 <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                     <img src='https://images.freeimages.com/images/large-previews/c03/colour-math-function-1170167.jpg' className="img-fluid" alt=""></img>
-                    <h3>{product.name}</h3>
-                    <h3>{product.description}</h3>
-                    <h3>{product.price}</h3>
-                    <p>Status: {product.state}</p>
+                    <div className='popup-body'>
+                        <h3>{product.name}</h3>
+                        <h4>{product.description}</h4>
+                        <h4>$ {product.price}</h4>
+                    </div>
+                    <p className='popup-status'>Status: {product.state}</p>
 
                     <div className="col-md-3 form-group">
                         <p><Calendar currentState={product.state} /></p>
