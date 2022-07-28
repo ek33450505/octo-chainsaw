@@ -122,12 +122,15 @@ h6 {
 #header {
   transition: .5s;
   z-index: 997;
-  top: 20px
+  top: 20px;
 }
 
 #header .header-container {
   background: #d3d3d3;
-  border-radius: 8px 8px 8px 8px;
+}
+
+.corner {
+  border-radius: 20px;
 }
 
 #header.header-scrolled {
@@ -161,9 +164,6 @@ h6 {
   max-height: 40px
 }
 
-.rounded {
-  border-radius: 8px 8px 8px 8px;
-}
 
 @media (max-width:992px) {
 
@@ -641,7 +641,7 @@ section {
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(54, 52, 58, .6);
+  /* background: rgba(54, 52, 58, .6); */
   /* background: rgba(182, 179, 186, 0); */
   position: absolute;
   left: 0;
@@ -660,7 +660,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-info {
   opacity: 1;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
@@ -671,13 +671,14 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
-  font-size: 20px;
+  font-size: 25px;
   color: #e4e48a;
-  font-weight: 600
+  font-weight: 600;
+  padding-top: 20px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {

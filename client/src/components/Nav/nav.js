@@ -10,13 +10,13 @@ export default function Nav() {
             <header id='header' className='fixed-top d-flex align-items-center'>
                 <div className='container'>
                     <div className='header-container d-flex align-items-center justify-content-between rounded'>
-                        <div className='logo rounded-left'>
+                        <div className='logo rounded-left'onClick={() => window.location.reload()} >
                             <Link to='/' className="navbar-brand" href="/"><img id="header-img" src="/images/logo_white_background.jpg"  alt="logo" />
                             </Link>
                         </div>
                         <nav id='navbar' className='navbar'>
                             <ul>
-                                <li>
+                                <li onClick={() => window.location.reload()}>
                                     <Link to='/' className='nav-link scrollto'>
                                         Categories
                                     </Link>

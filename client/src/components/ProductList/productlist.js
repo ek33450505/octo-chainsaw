@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Calendar from "../Calendar/calendar";
 import Popup from '../Popup/Popup';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 export default function ProductList({ currentCategory }) {
@@ -31,6 +32,11 @@ export default function ProductList({ currentCategory }) {
             })
     };
 
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = '/';
+        navigate(path); }
+
     //return a single product with a popup
     const renderProduct = (product) => {
         if (currentProductId === product.id) {
@@ -46,7 +52,7 @@ export default function ProductList({ currentCategory }) {
 
                     <div className="col-md-3 form-group">
                         <p><Calendar currentState={product.state} /></p>
-                        <button type='button' className='rentit-button2' onClick={() => window.location.reload()}> Rent </button>
+                        <button type='button' className='rentit-button2' onClick={routeChange}> Rent </button>
                     </div>
                 </Popup>
             )
@@ -101,8 +107,10 @@ export default function ProductList({ currentCategory }) {
             return (
                 products.map(product => (
                     <div>
-                        <h4 className='product-selected' onClick={() => setProduct(product)}>{product.name}</h4>
-                        {renderProduct(product)}
+                        <div>
+                            <h4 className='product-selected' onClick={() => setProduct(product)}>{product.name}</h4>
+                            {renderProduct(product)}
+                        </div>
                     </div>
                 ))
             )
