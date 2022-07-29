@@ -19,7 +19,7 @@ export default function Nav({ setCurrentCategory }) {
                             <ul>
                                 <li onClick={handleUpdateCategory}>
                                     <Link to='/' className='nav-link scrollto'>
-                                        Categories
+                                        Home
                                     </Link>
                                 </li>
                                 {/* {if user is logged in, show create listing, my account, and logout links */}
@@ -50,7 +50,7 @@ export default function Nav({ setCurrentCategory }) {
                                     <>
                                         <li>
                                             <Link to='signup' className='nav-link scrollto'>
-                                                Sign Up
+                                                Post
                                             </Link>
                                         </li>
                                         <li>

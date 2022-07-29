@@ -85,7 +85,7 @@ export default function ProductList({ currentCategory, setCurrentCategory }) {
                                     <div className="col-md-3 form-group">
                                         {/* <button type='button' className='rentit-button1' onClick={()=> setCurrentProduct(product.id)}><Link to='/'>Rent</Link>   </button> */}
                                         {/* <button type='button' className='rentit-button1' onClick={() => window.location.reload()}> Rent 1 </button> */}
-                                        <button type='button' className='rentit-button1' onClick={handleUpdateCategory}> Rent 1 </button>
+                                        <button type='button' className='rentit-button1' onClick={handleUpdateCategory}> Rent</button>
 
                                     </div>
                                 </div>

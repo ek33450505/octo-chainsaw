@@ -189,7 +189,7 @@ export default function CreateProduct() {
                                 </div>
                                 <div className='row center-button'>
                                     <div className="col-md-6 form-group">
-                                         <button type='button' className='rentit-button' onClick={createProduct}><Link to='/mylistings' >rentIt </Link>   <i className="bi bi-arrow-right"></i></button> 
+                                         <button type='button' className='rentit-button' onClick={createProduct}><Link to='/mylistings' >Create </Link>   <i className="bi bi-arrow-right"></i></button> 
                                     </div>
                                 </div>
 

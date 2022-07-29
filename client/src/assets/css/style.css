@@ -1083,14 +1083,16 @@ section {
 }
 
 #footer {
-  color: #444;
+  color: rgb(16, 16, 16);
   font-size: 14px;
-  background: #f1f0f2
+  /* background: #f1f0f2 */
+  background: rgb(162, 161, 161);
 }
 
 #footer .footer-top {
   padding: 60px 0 30px;
-  background: #f9f8f9
+  /* background: #f9f8f9 */
+  background: rgb(227, 226, 226);
 }
 
 #footer .footer-top .footer-contact h4 {
@@ -1141,7 +1143,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777;
+  color: rgb(93, 91, 91);
   transition: .3s;
   display: inline-block;
   line-height: 1
